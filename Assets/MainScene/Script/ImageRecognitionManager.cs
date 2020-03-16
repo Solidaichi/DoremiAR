@@ -7,7 +7,6 @@ using UnityEngine.XR.ARFoundation;
 
 public class ImageRecognitionManager : MonoBehaviour
 {
-
     private ARTrackedImageManager _arTrackedImageManager;
 
     void Awake()
@@ -45,7 +44,6 @@ public class ImageRecognitionManager : MonoBehaviour
         {
             Debug.Log(trackedImage.name);
         }
-
     }
 
 }
