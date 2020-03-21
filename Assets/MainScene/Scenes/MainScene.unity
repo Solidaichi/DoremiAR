@@ -208,7 +208,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 5
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -362,7 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4966719baa26e4b0e8231a24d9bd491a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FocusMode: 1
+  m_FocusMode: 0
   m_LightEstimationMode: 0
 --- !u!114 &955246900
 MonoBehaviour:
@@ -380,7 +380,7 @@ MonoBehaviour:
   m_PoseSource: 6
   m_PoseProviderComponent: {fileID: 0}
   m_TrackingType: 0
-  m_UpdateType: 0
+  m_UpdateType: 1
   m_UseRelativeTransform: 0
 --- !u!4 &955246901
 Transform:
@@ -469,5 +469,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ReferenceLibrary: {fileID: 11400000, guid: 084a017d999148b409438d2d72a44252, type: 2}
   m_MaxNumberOfMovingImages: 1
-  m_TrackedImagePrefab: {fileID: 6090690133475866575, guid: 127078d7961507d4285992bebb1ff4a4,
+  m_TrackedImagePrefab: {fileID: 6989159003698428037, guid: 87c670e0dbacd75419a8764e37f0ce50,
     type: 3}
