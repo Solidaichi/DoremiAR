@@ -43,6 +43,7 @@ public class ImageRecognitionManager : MonoBehaviour
         foreach (var trackedImage in args.added)
         {
             Debug.Log(trackedImage.name);
+
         }
     }
 
