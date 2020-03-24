@@ -29,7 +29,7 @@ public class ImageRecognitionManager : MonoBehaviour
         foreach (var trackedImage in args.added)
         {
             Debug.Log(trackedImage.name);
-            trackedImage.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+            //trackedImage.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
         }
     }
 

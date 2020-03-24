@@ -757,7 +757,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ReferenceLibrary: {fileID: 11400000, guid: 084a017d999148b409438d2d72a44252, type: 2}
   m_MaxNumberOfMovingImages: 1
-  m_TrackedImagePrefab: {fileID: 6989159003698428037, guid: 87c670e0dbacd75419a8764e37f0ce50,
+  m_TrackedImagePrefab: {fileID: 1813293251570313026, guid: e45f1239db155fa459c25b2a945afc64,
     type: 3}
 --- !u!1001 &1562069058
 PrefabInstance:
