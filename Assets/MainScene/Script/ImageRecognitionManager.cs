@@ -24,6 +24,15 @@ public class ImageRecognitionManager : MonoBehaviour
         _arTrackedImageManager.trackedImagesChanged -= OnImageChanged;
     }
 
+    private void OnImageChanged(ARTrackedImagesChangedEventArgs args)
+    {
+        foreach (var trackedImage in args.added)
+        {
+            Debug.Log(trackedImage.name);
+            trackedImage.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        }
+    }
+
     /*
     // Start is called before the first frame update
     void Start()
@@ -37,14 +46,5 @@ public class ImageRecognitionManager : MonoBehaviour
         
     }
     */
-
-    private void OnImageChanged(ARTrackedImagesChangedEventArgs args)
-    {
-        foreach (var trackedImage in args.added)
-        {
-            Debug.Log(trackedImage.name);
-
-        }
-    }
 
 }
