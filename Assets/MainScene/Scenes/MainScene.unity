@@ -512,7 +512,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 20
-  field of view: 60
+  field of view: 26.991467
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -573,10 +573,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Device: 0
-  m_PoseSource: 6
+  m_PoseSource: 2
   m_PoseProviderComponent: {fileID: 0}
   m_TrackingType: 0
-  m_UpdateType: 0
+  m_UpdateType: 2
   m_UseRelativeTransform: 0
 --- !u!4 &955246901
 Transform:
@@ -651,6 +651,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fea1baa0b4deb9b4f813c904dfc3762d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_WorldSpaceCanvasCamera: {fileID: 955246897}
+  m_DefaultTexture: {fileID: 10916, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!114 &1297279473
 MonoBehaviour:
   m_ObjectHideFlags: 0
