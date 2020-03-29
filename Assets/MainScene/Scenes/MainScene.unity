@@ -651,8 +651,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fea1baa0b4deb9b4f813c904dfc3762d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_WorldSpaceCanvasCamera: {fileID: 955246897}
-  m_DefaultTexture: {fileID: 10916, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!114 &1297279473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -667,7 +665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ReferenceLibrary: {fileID: 11400000, guid: 084a017d999148b409438d2d72a44252, type: 2}
   m_MaxNumberOfMovingImages: 1
-  m_TrackedImagePrefab: {fileID: 1813293251570313026, guid: e45f1239db155fa459c25b2a945afc64,
+  m_TrackedImagePrefab: {fileID: 8593247339493746831, guid: 1ed1178292c44514a9c439d9830dcf4d,
     type: 3}
 --- !u!1001 &1562069058
 PrefabInstance:
