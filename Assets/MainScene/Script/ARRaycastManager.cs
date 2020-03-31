@@ -1,15 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
-[RequireComponent(typeof(ARRaycastManager))]
-public class ARRaycastManager : MonoBehaviour
-{
-    [SerializeField, Tooltip("AR空間に表示させたいプレハブを登録")] GameObject _ARobj;
 
-    private GameObject _SpawnedObj;
+
+
+[RequireComponent(typeof(ARRaycastManager))]
+public class PlaceOnPlane : MonoBehaviour
+{
+    [SerializeField, Tooltip("AR空間に表示するプレハブを登録")] GameObject arObj;
+
+    private GameObject spawnedObject;
     private ARRaycastManager raycastManager;
     private static List<ARRaycastHit> hits = new List<ARRaycastHit>();
 
@@ -18,23 +20,25 @@ public class ARRaycastManager : MonoBehaviour
         raycastManager = GetComponent<ARRaycastManager>();
     }
 
-    // Start is called before the first frame update
-    /*void Start()
-    {
-        
-    }*/
-
-    // Update is called once per frame
     void Update()
     {
-       if (Input.touchCount > 0)
+        if (Input.touchCount > 0)
         {
-            Vector2 _TouchPosition = Input.GetTouch(0).position;
-            
-            if (raycastManager.Raycast(_TouchPosition, hits, TrackableType.Planes))
+            Vector2 touchPosition = Input.GetTouch(0).position;
+            if (raycastManager.Raycast(touchPosition, hits, TrackableType.Planes))
             {
+                // Raycastの衝突情報は距離によってソートされるため、0番目が最も近い場所でヒットした情報となります
+                var hitPose = hits[0].pose;
 
+                if (spawnedObject)
+                {
+                    spawnedObject.transform.position = hitPose.position;
+                }
+                else
+                {
+                    spawnedObject = Instantiate(arObj, hitPose.position, Quaternion.identity);
+                }
             }
-        } 
+        }
     }
 }
