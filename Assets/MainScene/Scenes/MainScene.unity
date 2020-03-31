@@ -602,7 +602,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1297279471}
   - component: {fileID: 1297279470}
-  - component: {fileID: 1297279473}
   - component: {fileID: 1297279472}
   m_Layer: 0
   m_Name: AR Session Origin
@@ -648,25 +647,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1297279469}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fea1baa0b4deb9b4f813c904dfc3762d, type: 3}
+  m_Script: {fileID: 11500000, guid: e1760703bbd54c04488a8d10600262ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1297279473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1297279469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dea56a9eaadd1c439095de4f9a371cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ReferenceLibrary: {fileID: 11400000, guid: 084a017d999148b409438d2d72a44252, type: 2}
-  m_MaxNumberOfMovingImages: 1
-  m_TrackedImagePrefab: {fileID: 8593247339493746831, guid: 1ed1178292c44514a9c439d9830dcf4d,
-    type: 3}
+  m_PlanePrefab: {fileID: 0}
+  m_DetectionMode: 2
 --- !u!1001 &1562069058
 PrefabInstance:
   m_ObjectHideFlags: 0
