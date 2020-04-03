@@ -6,11 +6,9 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: Grass_Default
-    2100002: Default_Grass
     2300000: //RootNode
     3300000: //RootNode
     4300000: Terrain_Hill_S
-    4300002: IL3DN_GroundPatch
   externalObjects:
   - first:
       type: UnityEngine:Material

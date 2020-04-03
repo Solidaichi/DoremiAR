@@ -5,12 +5,49 @@ namespace IL3DN
 
     public class IL3DN_Wind : MonoBehaviour
     {
+        public Texture2D NoiseTexture = default;
+        public bool Wiggle = true;
+        public bool Wind = true;
+        [Range(0f, 1f)]
+        public float WindStrenght = .5f;
+        [Range(0f, 1f)]
+        public float WindSpeed = .5f;
+        [Range(0f, 1f)]
+        public float WindTurbulence = .5f;
+        [Range(0f, 1f)]
+        public float LeavesWiggle = .5f;
+        [Range(0f, 1f)]
+        public float GrassWiggle = .5f;
         private float WindGizmo = 0.5f;
 
         void Update()
         {
 
+            if (Wiggle)
+            {
+                Shader.EnableKeyword("_WIGGLE_ON");
+            }
+            else
+            {
+                Shader.DisableKeyword("_WIGGLE_ON");
+            }
+
+            if (Wind)
+            {
+                Shader.EnableKeyword("_WIND_ON");
+            }
+            else
+            {
+                Shader.DisableKeyword("_WIND_ON");
+            }
+
+            Shader.SetGlobalTexture("NoiseTextureFloat", NoiseTexture);
             Shader.SetGlobalVector("WindDirection", transform.rotation * Vector3.back);
+            Shader.SetGlobalFloat("WindStrenghtFloat", WindStrenght);
+            Shader.SetGlobalFloat("WindSpeedFloat", WindSpeed);
+            Shader.SetGlobalFloat("WindTurbulenceFloat", WindTurbulence);
+            Shader.SetGlobalFloat("LeavesWiggleFloat", LeavesWiggle);
+            Shader.SetGlobalFloat("GrassWiggleFloat", GrassWiggle);
 
         }
 

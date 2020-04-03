@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5400000}
   - component: {fileID: 8200000}
   m_Layer: 0
-  m_Name: FPSController
+  m_Name: IL3DN_FPSController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,10 +83,12 @@ MonoBehaviour:
     lockCursor: 1
   m_StepInterval: 2
   m_FootstepSounds:
-  - {fileID: 8300000, guid: d075dc87c5731f84b9901c46989a8832, type: 3}
-  - {fileID: 8300000, guid: 07d6c79ac5a1e3a4094f31a17377867e, type: 3}
-  m_JumpSound: {fileID: 8300000, guid: 0b5df60ae886e094e98121686439b7da, type: 3}
-  m_LandSound: {fileID: 8300000, guid: 739a2cf7ef547fc409eb9346acf3fe14, type: 3}
+  - {fileID: 8300000, guid: bfdae5c4ec215164e9e3bc1a41c43c91, type: 3}
+  - {fileID: 8300000, guid: 8d3d0c77dce16bc41b0086c112651191, type: 3}
+  - {fileID: 8300000, guid: 179c3436465598b498dea48c92d80712, type: 3}
+  - {fileID: 8300000, guid: db0dce178e8b8744c83950758acad34e, type: 3}
+  m_JumpSound: {fileID: 8300000, guid: 183bfe3a3604edd4789cf735888a70bc, type: 3}
+  m_LandSound: {fileID: 8300000, guid: f7c55af852ea4ec42beb950a6d63dcd1, type: 3}
 --- !u!54 &5400000
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -213,6 +215,7 @@ GameObject:
   - component: {fileID: 8100000}
   - component: {fileID: 12474086}
   - component: {fileID: 368511592}
+  - component: {fileID: 368511593}
   m_Layer: 0
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -354,3 +357,16 @@ MonoBehaviour:
   - assemblyQualifiedName: IL3DN_Fog_PP, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   m_AfterStackBundles: []
+--- !u!114 &368511593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aa02f7f3c16e1b48a3d3cfd0cf1cf9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: a873ffaddfff74341869a8207d52a7a6, type: 2}
