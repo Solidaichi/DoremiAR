@@ -13,12 +13,12 @@ GameObject:
   - component: {fileID: 4275378155775523841}
   - component: {fileID: 5375501544729254897}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: pond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1772139565615285665
 Transform:
   m_ObjectHideFlags: 0
@@ -26,12 +26,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906674072072010631}
-  m_LocalRotation: {x: -0.052967604, y: 0.00057710387, z: -0.010879469, w: 0.9985368}
-  m_LocalPosition: {x: 0.223, y: 0.02, z: -0.894}
-  m_LocalScale: {x: 0.978261, y: 0.12826957, z: 0.88085}
+  m_LocalRotation: {x: -0.005490709, y: -0.9524886, z: -0.053793885, w: 0.29973587}
+  m_LocalPosition: {x: 0.32815376, y: 0.020000001, z: 0.8609761}
+  m_LocalScale: {x: 0.9782608, y: 0.12826957, z: 0.88084996}
   m_Children: []
-  m_Father: {fileID: 1415736272961387841}
-  m_RootOrder: 2
+  m_Father: {fileID: 865925763457700752}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -6.071, y: 0.133, z: -1.256}
 --- !u!33 &1288173806952199800
 MeshFilter:
@@ -370,6 +370,7 @@ Transform:
   - {fileID: 2449207145062762172}
   - {fileID: 8855416947396817299}
   - {fileID: 4593432292733476209}
+  - {fileID: 1772139565615285665}
   m_Father: {fileID: 1415736272961387841}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 145.13, z: 0}
@@ -560,7 +561,6 @@ Transform:
   m_Children:
   - {fileID: 865925763457700752}
   - {fileID: 8804884218278137518}
-  - {fileID: 1772139565615285665}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1808,6 +1808,16 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
       value: 0.9872257
+      objectReference: {fileID: 0}
+    - target: {fileID: 6354736156867020896, guid: 48739cb812238724689004505d5704d4,
+        type: 3}
+      propertyPath: InitialModule.startSizeY.scalar
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6354736156867020896, guid: 48739cb812238724689004505d5704d4,
+        type: 3}
+      propertyPath: InitialModule.startSizeZ.scalar
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6354736156867020899, guid: 48739cb812238724689004505d5704d4,
         type: 3}
