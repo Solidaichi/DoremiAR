@@ -522,6 +522,36 @@ Transform:
   m_Father: {fileID: 1571457301}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1283132641
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1283132642}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1283132642
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283132641}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.522, y: 0.024211392, z: -0.485}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1477687342 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4684640784704286465, guid: 1ed1178292c44514a9c439d9830dcf4d,
@@ -690,7 +720,7 @@ PrefabInstance:
     - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
       propertyPath: turnSpeed
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
@@ -700,52 +730,82 @@ PrefabInstance:
     - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
       propertyPath: randomBaseOffset
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
       propertyPath: yMinMax.x
-      value: 0.1
+      value: -0.005
       objectReference: {fileID: 0}
     - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
       propertyPath: yMinMax.y
-      value: 0.5
+      value: 0.008
       objectReference: {fileID: 0}
     - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
       propertyPath: radiusMinMax.x
-      value: 0.5
+      value: -0.004
       objectReference: {fileID: 0}
     - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
       propertyPath: radiusMinMax.y
-      value: 0.8
+      value: 0.008
       objectReference: {fileID: 0}
     - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
       propertyPath: changeAnimEveryFromTo.x
-      value: 0.1
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
       propertyPath: changeTargetEveryFromto.x
-      value: 0.1
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
       propertyPath: changeAnimEveryFromTo.y
-      value: 0.8
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
       propertyPath: changeTargetEveryFromto.y
-      value: 0.8
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
       propertyPath: returnToBase
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: limitZmin
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: limitXmin
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: limitXmax
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: limitZmax
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: idleRatio
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: switchSeconds
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8593247339493746831, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
