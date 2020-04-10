@@ -24,8 +24,8 @@ public class BirdMoveController : MonoBehaviour
     private Vector3 rotateTarget, position, direction, velocity, randomizedBase; 
     private Quaternion lookRotation;
 
-    public float changeTarget = 0f, changeAnim = 0f, timeSinceTarget = 0f, timeSinceAnim = 0f, prevAnim, currentAnim = 0f, prevSpeed, speed, zturn, prevz, turnSpeedBackup;
-    public float distanceFromBase, distanceFromTarget;
+    [System.NonSerialized] public float changeTarget = 0f, changeAnim = 0f, timeSinceTarget = 0f, timeSinceAnim = 0f, prevAnim, currentAnim = 0f, prevSpeed, speed, zturn, prevz, turnSpeedBackup;
+    [System.NonSerialized] public float distanceFromBase, distanceFromTarget;
 
       
 
@@ -52,6 +52,19 @@ public class BirdMoveController : MonoBehaviour
         distanceFromBase = Vector3.Magnitude(randomizedBase - rigidbody.position);
         distanceFromTarget = Vector3.Magnitude(flyingTarget.position - rigidbody.position);
 
+        if (returnToBase && distanceFromBase < 10f)
+        {
+            if (turnSpeed != 300f && rigidbody.velocity.magnitude != 0f)
+            {
+                turnSpeedBackup = turnSpeed;
+                turnSpeed = 300f;
+            }else if (distanceFromBase <= 1f)
+            {
+                rigidbody.velocity = Vector3.zero;
+                turnSpeed = turnSpeedBackup;
+            }
+        }
+
         if (changeAnim < 0f)
         {
             prevAnim = currentAnim;
@@ -68,6 +81,9 @@ public class BirdMoveController : MonoBehaviour
             }          
         }
 
+        zturn = Mathf.Clamp(Vector3.SignedAngle(rotateTarget, direction, Vector3.up), -45, -45);
+
+
         if (changeTarget < 0f)
         {
             rotateTarget = ChangeDirection(rigidbody.transform.position);
@@ -82,6 +98,17 @@ public class BirdMoveController : MonoBehaviour
             timeSinceTarget = 0f;
         }
 
+        if (rigidbody.transform.position.y < yMinMax.x + 10f || rigidbody.transform.position.y > yMinMax.x - 10f)
+        {
+            if (rigidbody.transform.position.y < yMinMax.x + 10f)
+            {
+                rotateTarget.y = 1f;
+            }else
+            {
+                rotateTarget.y = -1f;
+            }
+        }       
+
         changeAnim -= Time.fixedDeltaTime;
         changeTarget -= Time.fixedDeltaTime;
         timeSinceTarget += Time.fixedDeltaTime;
@@ -95,19 +122,56 @@ public class BirdMoveController : MonoBehaviour
         Vector3 rotation = Quaternion.RotateTowards(rigidbody.transform.rotation, lookRotation, turnSpeed * Time.fixedDeltaTime).eulerAngles;
         rigidbody.transform.eulerAngles = rotation;
 
+        float temp = prevz;
+        if (prevz < zturn)
+        {
+            prevz += Mathf.Min(turnSpeed * Time.fixedDeltaTime, zturn - prevz);
+        }else if (prevz >= zturn)
+        {
+            prevz -= Mathf.Min(turnSpeed * Time.fixedDeltaTime, prevz - zturn);
+        }
+        prevz = Mathf.Clamp(prevz, -45f, 45f);
+        rigidbody.transform.Rotate(0f, 0f, prevz - temp, Space.Self);
+
         direction = Quaternion.Euler(transform.eulerAngles) * Vector3.forward;
+
+        if (returnToBase && distanceFromBase < idleSpeed)
+        {
+            rigidbody.velocity = Mathf.Min(idleSpeed, distanceFromBase) * direction;
+        }
+       
         rigidbody.velocity = Mathf.Lerp(prevSpeed, speed, Mathf.Clamp(timeSinceAnim / switchSeconds, 0f, 1f)) * direction;
+
+        if (rigidbody.transform.position.y < yMinMax.x|| rigidbody.transform.position.y > yMinMax.x)
+        {
+            position = rigidbody.transform.position;
+            position.y = Mathf.Clamp(position.y, yMinMax.x, yMinMax.y);
+            rigidbody.transform.position = position;
+        }
     }
 
     Vector3 ChangeDirection(Vector3 currentPosition)
     {
         Vector3 newDir;
-        float angleXZ = Random.Range(-Mathf.PI, Mathf.PI);
-        float angleY = Random.Range(-Mathf.PI / 48f, Mathf.PI / 48f);
 
-        newDir = Mathf.Sin(angleXZ) * Vector3.forward + Mathf.Cos(angleXZ) * Vector3.right + Mathf.Sin(angleY) * Vector3.up;
+        if (returnToBase)
+        {
+            newDir = homeTarget.position - currentPosition;
+        }else if (distanceFromTarget > radiusMinMax.y)
+        {
+            newDir = flyingTarget.position - currentPosition;
+        }else if (distanceFromTarget < radiusMinMax.x)
+        {
+            newDir = currentPosition - flyingTarget.position;
+        }else
+        {
+            float angleXZ = Random.Range(-Mathf.PI, Mathf.PI);
+            float angleY = Random.Range(-Mathf.PI / 48f, Mathf.PI / 48f);
 
-        return Vector3.forward;
+            newDir = Mathf.Sin(angleXZ) * Vector3.forward + Mathf.Cos(angleXZ) * Vector3.right + Mathf.Sin(angleY) * Vector3.up;
+        }
+
+        return newDir.normalized;
     }
 
     float ChangeAnim(float currentAnim)
