@@ -399,6 +399,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &788896354 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4512023347120454548, guid: 1ed1178292c44514a9c439d9830dcf4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1910175062}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &825584516
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,6 +682,71 @@ PrefabInstance:
       propertyPath: homeTarget
       value: 
       objectReference: {fileID: 1477687342}
+    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: idleSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: turnSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: flyingTarget
+      value: 
+      objectReference: {fileID: 788896354}
+    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: randomBaseOffset
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: yMinMax.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: yMinMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: radiusMinMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: radiusMinMax.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: changeAnimEveryFromTo.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: changeTargetEveryFromto.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: changeAnimEveryFromTo.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: changeTargetEveryFromto.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: returnToBase
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8593247339493746831, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
       propertyPath: m_Name
