@@ -10,7 +10,7 @@ using UnityEngine.XR.ARSubsystems;
 public class PlaceOnPlane : MonoBehaviour
 {
     [SerializeField, Tooltip("AR空間に表示するプレハブを登録")] GameObject arObj;
-    [SerializeField] GameObject birdSoundObj, windSoundObj;
+    //[SerializeField] GameObject birdSoundObj, windSoundObj;
 
     private GameObject spawnedObject;
     private ARRaycastManager raycastManager;
@@ -24,8 +24,8 @@ public class PlaceOnPlane : MonoBehaviour
 
     private void Start()
     {
-        birdSound = birdSoundObj.GetComponent<AudioSource>();
-        windSound = windSoundObj.GetComponent<AudioSource>();
+        birdSound = GameObject.FindGameObjectWithTag("BirdSound").GetComponent<AudioSource>();
+        windSound = GameObject.FindGameObjectWithTag("WindSound").GetComponent<AudioSource>();
     }
 
     void Update()

@@ -570,7 +570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlanePrefab: {fileID: 230767333}
-  m_DetectionMode: -1
+  m_DetectionMode: 1
 --- !u!114 &1571457300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,5 +612,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arObj: {fileID: 8593247339493746831, guid: 1ed1178292c44514a9c439d9830dcf4d, type: 3}
-  birdSoundObj: {fileID: 0}
-  windSoundObj: {fileID: 0}
