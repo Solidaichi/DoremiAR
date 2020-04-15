@@ -280,7 +280,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 243599824091497972, guid: 89ef2123a31ebe547959c299198012c1,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: a7be881bc0772fc43add174ae385ab14, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -408,7 +408,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 243703940283072516, guid: 89ef2123a31ebe547959c299198012c1,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 16a07621d1bc9a846bb265d15fb71f4c, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -3157,12 +3157,12 @@ PrefabInstance:
     - target: {fileID: 3334986950034285711, guid: e8b3085889e9e6b42957cadeedc31b28,
         type: 3}
       propertyPath: animSpeedMinMax.y
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3334986950034285711, guid: e8b3085889e9e6b42957cadeedc31b28,
         type: 3}
       propertyPath: idleSpeed
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3334986950034285711, guid: e8b3085889e9e6b42957cadeedc31b28,
         type: 3}
@@ -3213,6 +3213,11 @@ PrefabInstance:
         type: 3}
       propertyPath: randomBaseOffset
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3334986950034285711, guid: e8b3085889e9e6b42957cadeedc31b28,
+        type: 3}
+      propertyPath: animSpeedMinMax.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6445611519620011512, guid: e8b3085889e9e6b42957cadeedc31b28,
         type: 3}

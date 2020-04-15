@@ -52,6 +52,7 @@ public class BirdMoveController : MonoBehaviour
         distanceFromBase = Vector3.Magnitude(randomizedBase - rigidbody.position);
         distanceFromTarget = Vector3.Magnitude(flyingTarget.position - rigidbody.position);
 
+        //10 
         if (returnToBase && distanceFromBase < 10f)
         {
             if (turnSpeed != 300f && rigidbody.velocity.magnitude != 0f)
