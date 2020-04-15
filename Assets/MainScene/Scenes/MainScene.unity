@@ -600,7 +600,7 @@ PrefabInstance:
     - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
       propertyPath: idleSpeed
-      value: 0.01
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
@@ -610,7 +610,7 @@ PrefabInstance:
     - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
       propertyPath: radiusMinMax.x
-      value: 0.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
@@ -627,10 +627,45 @@ PrefabInstance:
       propertyPath: changeAnimEveryFromTo.x
       value: 0.03
       objectReference: {fileID: 0}
+    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: flyingTarget
+      value: 
+      objectReference: {fileID: 1625704071}
+    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: yMinMax.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: animSpeedMinMax.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: idleRatio
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723382440931846598, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8593247339493746831, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
       propertyPath: m_Name
       value: Doremi_AR_obj
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654669296622390327, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.811
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654669296622390327, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ed1178292c44514a9c439d9830dcf4d, type: 3}
@@ -721,3 +756,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arObj: {fileID: 8593247339493746831, guid: 1ed1178292c44514a9c439d9830dcf4d, type: 3}
+--- !u!4 &1625704071 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3859924643190860823, guid: 1ed1178292c44514a9c439d9830dcf4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1440490816}
+  m_PrefabAsset: {fileID: 0}
