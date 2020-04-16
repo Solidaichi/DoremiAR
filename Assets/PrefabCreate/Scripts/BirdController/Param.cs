@@ -3,15 +3,15 @@
 [CreateAssetMenu(menuName = "Boid/Param")]
 public class Param : ScriptableObject
 {
-    public float initSpeed;
-    public float minSpeed;
-    public float maxSpeed;
-    public float neighborDistance;
-    public float neighborFov;
-    public float separationWeight;
-    public float wallScale;
-    public float wallDistance;
-    public float wallWeight;
-    public float alignmentWeight;
-    public float cohesionWeiight;
+    public float initSpeed = 2f;
+    public float minSpeed = 2f;
+    public float maxSpeed = 5f;
+    public float neighborDistance = 1f;
+    public float neighborFov = 90f;
+    public float separationWeight = 5f;
+    public float wallScale = 5f;
+    public float wallDistance = 3f;
+    public float wallWeight = 1f;
+    public float alignmentWeight = 2f;
+    public float cohesionWeight = 3f;
 }

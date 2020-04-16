@@ -7,40 +7,41 @@ public class Boid : MonoBehaviour
 {
     public Simulation simulation { get; set; }
     public Param param { get; set; }
-    public Vector3 pos { get; set; }
+    public Vector3 pos { get; private set; }
     public Vector3 velocity { get; private set; }
-    public Vector3 accel = Vector3.zero;
+    Vector3 accel = Vector3.zero;
     List<Boid> neighbors = new List<Boid>();
 
-
-    // Start is called before the first frame update
     void Start()
     {
+        //Debug.Log(simulation);
         pos = transform.position;
         velocity = transform.forward * param.initSpeed;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // 近隣の個体を探してneighborsリストを更新
-        /*UpdateNeighbors();
+        // 近隣の個体を探して neighbors リストを更新
+        //UpdateNeighbors();
 
         // 壁に当たりそうになったら向きを変える
         UpdateWalls();
 
         // 近隣の個体から離れる
-        UpdateSeparation();
+        //UpdateSeparation();
 
         // 近隣の個体と速度を合わせる
-        UpdateAlignment();
-        */
-        //　上記4つの結果更新されたaccelをvelocityに反映して位置を動かす
-        UpdateMove();
+        //UpdateAlignment();
 
+        // 近隣の個体の中心に移動する
+        //UpdateCohesion();
+
+        // 上記 4 つの結果更新された accel を velocity に反映して位置を動かす
+        UpdateMove();
     }
 
-    private void UpdateMove()
+
+    void UpdateMove()
     {
         var dt = Time.deltaTime;
 
@@ -54,6 +55,7 @@ public class Boid : MonoBehaviour
         transform.SetPositionAndRotation(pos, rot);
 
         accel = Vector3.zero;
+        Debug.Log("UpdateMove");
     }
 
     /*private void UpdateAlignment()
@@ -64,14 +66,32 @@ public class Boid : MonoBehaviour
     private void UpdateSeparation()
     {
         throw new NotImplementedException();
-    }
+    }*/
 
     private void UpdateWalls()
     {
-        throw new NotImplementedException();
+        if (!simulation) { return;  }
+
+        var scale = param.wallScale * 0.5f;
+        accel +=
+            CalcAccelAgainstWall(-scale - pos.x, Vector3.right) +
+            CalcAccelAgainstWall(-scale - pos.y, Vector3.up) +
+            CalcAccelAgainstWall(-scale - pos.z, Vector3.forward) +
+            CalcAccelAgainstWall(+scale - pos.x, Vector3.left) +
+            CalcAccelAgainstWall(+scale - pos.y, Vector3.down) +
+            CalcAccelAgainstWall(+scale - pos.z, Vector3.back);
     }
 
-    private void UpdateNeighbors()
+    Vector3 CalcAccelAgainstWall(float distance, Vector3 dir)
+    {
+        if (distance < param.wallDistance)
+        {
+            return dir * (param.wallWeight / Mathf.Abs(distance / param.wallDistance));
+        }
+        return Vector3.zero;
+    }
+
+    /*private void UpdateNeighbors()
     {
         throw new NotImplementedException();
     }*/

@@ -1,7 +1,6 @@
-﻿using System.Collections;
+﻿using UnityEngine;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using UnityEngine;
 
 public class Simulation : MonoBehaviour
 {
@@ -14,19 +13,20 @@ public class Simulation : MonoBehaviour
     [SerializeField]
     Param param;
 
-
     List<Boid> boids_ = new List<Boid>();
-
     public ReadOnlyCollection<Boid> boids
     {
-        get { return boids_.AsReadOnly();  }
+        get { return boids_.AsReadOnly(); }
     }
+
+    
 
     void AddBoid()
     {
         var go = Instantiate(boidPrefab, Random.insideUnitSphere, Random.rotation);
         go.transform.SetParent(transform);
         var boid = go.GetComponent<Boid>();
+        
         boid.simulation = this;
         boid.param = param;
         boids_.Add(boid);
@@ -34,7 +34,7 @@ public class Simulation : MonoBehaviour
 
     void RemoveBoid()
     {
-        if (boids_.Count == 0) { return;  }
+        if (boids_.Count == 0) return;
 
         var lastIndex = boids_.Count - 1;
         var boid = boids_[lastIndex];
@@ -42,24 +42,25 @@ public class Simulation : MonoBehaviour
         boids_.RemoveAt(lastIndex);
     }
 
-    // Update is called once per frame
     void Update()
     {
         while (boids_.Count < boidCount)
         {
             AddBoid();
-        }   
-
+        }
         while (boids_.Count > boidCount)
         {
             RemoveBoid();
+            Debug.Log("Remove");
         }
 
-        void OnDrawGizmos()
-        {
-            if (!param) { return;  }
-            Gizmos.color = Color.green;
-            Gizmos.DrawWireCube(Vector3.zero, Vector3.one * param.wallScale);
-        }
+        
+    }
+
+    void OnDrawGizmos()
+    {
+        if (!param) return;
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(Vector3.zero, Vector3.one * param.wallScale);
     }
 }
