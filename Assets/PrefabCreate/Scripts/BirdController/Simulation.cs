@@ -13,17 +13,25 @@ public class Simulation : MonoBehaviour
     [SerializeField]
     Param param;
 
+    private GameObject dominoObj;
+
     List<Boid> boids_ = new List<Boid>();
     public ReadOnlyCollection<Boid> boids
     {
         get { return boids_.AsReadOnly(); }
     }
 
-    
+    private void Start()
+    {
+        dominoObj = GameObject.FindGameObjectWithTag("domino");
+        //Debug.Log("domino : " + dominoObj);
+    }
+
 
     void AddBoid()
-    {
-        var go = Instantiate(boidPrefab, Random.insideUnitSphere, Random.rotation);
+    {       
+        var go = Instantiate(boidPrefab, dominoObj.transform.position, Random.rotation);
+        Debug.Log("go : " + go.transform.position);
         go.transform.SetParent(transform);
         var boid = go.GetComponent<Boid>();
         
@@ -61,6 +69,7 @@ public class Simulation : MonoBehaviour
     {
         if (!param) return;
         Gizmos.color = Color.green;
+        // dominoObj.transform.position
         Gizmos.DrawWireCube(Vector3.zero, Vector3.one * param.wallScale);
     }
 }

@@ -7,20 +7,29 @@ public class Boid : MonoBehaviour
 {
     public Simulation simulation { get; set; }
     public Param param { get; set; }
-    public Vector3 pos { get; private set; }
+    public Vector3 pos { get; set; }
     public Vector3 velocity { get; private set; }
+
+    [SerializeField]
+    GameObject posObj;
+
     Vector3 accel = Vector3.zero;
     List<Boid> neighbors = new List<Boid>();
 
     void Start()
     {
         //Debug.Log(simulation);
+        posObj = GameObject.FindGameObjectWithTag("domino");
+        //Debug.Log("posobj : " + posObj.transform.position);
         pos = transform.position;
+        Debug.Log("pos : " + pos);
         velocity = transform.forward * param.initSpeed;
     }
 
     void Update()
     {
+        //pos = posObj.transform.position;
+        pos = transform.position;
         // 近隣の個体を探して neighbors リストを更新
         UpdateNeighbors();
 
@@ -104,14 +113,16 @@ public class Boid : MonoBehaviour
         if (!simulation) { return;  }
 
         var scale = param.wallScale * 0.5f;
-        Debug.Log(scale);
+        //Debug.Log(scale);
         accel +=
-            CalcAccelAgainstWall(-scale - pos.x, Vector3.right) +
+            CalcAccelAgainstWall(-scale - pos.x, Vector3.right ) +
             CalcAccelAgainstWall(-scale - pos.y, Vector3.up) +
             CalcAccelAgainstWall(-scale - pos.z, Vector3.forward) +
             CalcAccelAgainstWall(+scale - pos.x, Vector3.left) +
             CalcAccelAgainstWall(+scale - pos.y, Vector3.down) +
             CalcAccelAgainstWall(+scale - pos.z, Vector3.back);
+
+        //Debug.Log("accel True : " + accel);
     }
 
     Vector3 CalcAccelAgainstWall(float distance, Vector3 dir)
@@ -121,7 +132,7 @@ public class Boid : MonoBehaviour
         if (distance < param.wallDistance)
         {
             wallDir = dir * (param.wallWeight / Mathf.Abs(distance / param.wallDistance));
-            //Debug.Log(wallDir);
+            //Debug.Log("wallDir True : " + wallDir);
             return wallDir;
         }
         return Vector3.zero;

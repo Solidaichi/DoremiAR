@@ -532,11 +532,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 865925763457700752, guid: 1ed1178292c44514a9c439d9830dcf4d,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
-      objectReference: {fileID: 0}
     - target: {fileID: 1415736272961387841, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -592,131 +587,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
-        type: 3}
-      propertyPath: moveSpeedMinMax.x
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
-        type: 3}
-      propertyPath: moveSpeedMinMax.y
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
-        type: 3}
-      propertyPath: idleSpeed
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
-        type: 3}
-      propertyPath: radiusMinMax.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
-        type: 3}
-      propertyPath: radiusMinMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
-        type: 3}
-      propertyPath: yMinMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
-        type: 3}
-      propertyPath: changeAnimEveryFromTo.y
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
-        type: 3}
-      propertyPath: changeAnimEveryFromTo.x
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
-        type: 3}
-      propertyPath: flyingTarget
-      value: 
-      objectReference: {fileID: 1625704071}
-    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
-        type: 3}
-      propertyPath: yMinMax.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
-        type: 3}
-      propertyPath: animSpeedMinMax.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5417311449478473668, guid: 1ed1178292c44514a9c439d9830dcf4d,
-        type: 3}
-      propertyPath: idleRatio
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7720429395834518206, guid: 1ed1178292c44514a9c439d9830dcf4d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7723382440931846598, guid: 1ed1178292c44514a9c439d9830dcf4d,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8593247339493746831, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
       propertyPath: m_Name
       value: Doremi_AR_obj
       objectReference: {fileID: 0}
-    - target: {fileID: 8654669296622390327, guid: 1ed1178292c44514a9c439d9830dcf4d,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.811
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654669296622390327, guid: 1ed1178292c44514a9c439d9830dcf4d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654669296622882839, guid: 1ed1178292c44514a9c439d9830dcf4d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8855416947396817296, guid: 1ed1178292c44514a9c439d9830dcf4d,
-        type: 3}
-      propertyPath: WindTurbulence
-      value: 0.123
-      objectReference: {fileID: 0}
-    - target: {fileID: 8855416947396817296, guid: 1ed1178292c44514a9c439d9830dcf4d,
-        type: 3}
-      propertyPath: GrassWiggle
-      value: 0.329
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6852139530945381062, guid: 1ed1178292c44514a9c439d9830dcf4d, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ed1178292c44514a9c439d9830dcf4d, type: 3}
---- !u!1 &1440490817 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3878286400361648119, guid: 1ed1178292c44514a9c439d9830dcf4d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1440490816}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1440490818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1440490817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5f073332d665f54783f9b3c7986953b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boidCount: 3
-  boidPrefab: {fileID: 7487746391183428758, guid: 7b0e6dc98409d5643915d7f9cb366cb4,
-    type: 3}
-  param: {fileID: 11400000, guid: 5e17bc24fc9f6564da72a796df38d051, type: 2}
 --- !u!1 &1571457297
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,9 +681,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arObj: {fileID: 8593247339493746831, guid: 1ed1178292c44514a9c439d9830dcf4d, type: 3}
---- !u!4 &1625704071 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3859924643190860823, guid: 1ed1178292c44514a9c439d9830dcf4d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1440490816}
-  m_PrefabAsset: {fileID: 0}

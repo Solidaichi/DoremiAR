@@ -7,6 +7,7 @@ TagManager:
   - Audio
   - WindSound
   - BirdSound
+  - domino
   layers:
   - Default
   - TransparentFX

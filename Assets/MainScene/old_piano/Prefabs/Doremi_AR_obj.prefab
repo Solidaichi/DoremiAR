@@ -931,6 +931,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1440490818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3878286400361648119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5f073332d665f54783f9b3c7986953b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boidCount: 3
+  boidPrefab: {fileID: 7487746391183428758, guid: 7b0e6dc98409d5643915d7f9cb366cb4,
+    type: 3}
+  param: {fileID: 11400000, guid: 5e17bc24fc9f6564da72a796df38d051, type: 2}
 --- !u!1 &4105171181707533231
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,7 +1104,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5801795425203308732}
   m_LocalRotation: {x: 0, y: 0.95405746, z: 0, w: 0.29962367}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4472969050137261344}
@@ -1266,7 +1282,7 @@ GameObject:
   - component: {fileID: 1415736272961387841}
   m_Layer: 0
   m_Name: Doremi_AR_obj
-  m_TagString: Untagged
+  m_TagString: domino
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1587,12 +1603,12 @@ PrefabInstance:
     - target: {fileID: 8690542827623584977, guid: 188c62f1c6f36dd4381381872c8efe05,
         type: 3}
       propertyPath: GrassWiggle
-      value: 0.564
+      value: 0.329
       objectReference: {fileID: 0}
     - target: {fileID: 8690542827623584977, guid: 188c62f1c6f36dd4381381872c8efe05,
         type: 3}
       propertyPath: WindTurbulence
-      value: 0.234
+      value: 0.123
       objectReference: {fileID: 0}
     - target: {fileID: 8690542827623584978, guid: 188c62f1c6f36dd4381381872c8efe05,
         type: 3}
@@ -3239,8 +3255,15 @@ PrefabInstance:
       propertyPath: m_Interpolate
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4211385037253247373, guid: e8b3085889e9e6b42957cadeedc31b28, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e8b3085889e9e6b42957cadeedc31b28, type: 3}
+--- !u!1 &3878286400361648119 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5815299507486821564, guid: e8b3085889e9e6b42957cadeedc31b28,
+    type: 3}
+  m_PrefabInstance: {fileID: 7306642866267833163}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7723382440931846598 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1029247961729739405, guid: e8b3085889e9e6b42957cadeedc31b28,
