@@ -22,24 +22,37 @@ public class Boid : MonoBehaviour
     void Update()
     {
         // 近隣の個体を探して neighbors リストを更新
-        //UpdateNeighbors();
+        UpdateNeighbors();
 
         // 壁に当たりそうになったら向きを変える
         UpdateWalls();
 
         // 近隣の個体から離れる
-        //UpdateSeparation();
+        UpdateSeparation();
 
         // 近隣の個体と速度を合わせる
-        //UpdateAlignment();
+        UpdateAlignment();
 
         // 近隣の個体の中心に移動する
-        //UpdateCohesion();
+        UpdateCohesion();
 
         // 上記 4 つの結果更新された accel を velocity に反映して位置を動かす
         UpdateMove();
     }
 
+    private void UpdateCohesion()
+    {
+        if (neighbors.Count == 0) return;
+
+        var averagePos = Vector3.zero;
+        foreach (var neighbor in neighbors)
+        {
+            averagePos += neighbor.pos;
+        }
+        averagePos /= neighbors.Count;
+
+        accel += (averagePos - pos) * param.cohesionWeight;
+    }
 
     void UpdateMove()
     {
@@ -58,21 +71,40 @@ public class Boid : MonoBehaviour
         Debug.Log("UpdateMove");
     }
 
-    /*private void UpdateAlignment()
+    private void UpdateAlignment()
     {
-        throw new NotImplementedException();
+        if (neighbors.Count == 0) return;
+
+        var averageVelocity = Vector3.zero;
+        foreach (var neighbor in neighbors)
+        {
+            averageVelocity += neighbor.velocity;
+        }
+        averageVelocity /= neighbors.Count;
+
+        accel += (averageVelocity - velocity) * param.alignmentWeight;
     }
 
     private void UpdateSeparation()
     {
-        throw new NotImplementedException();
-    }*/
+        if (neighbors.Count == 0) return;
+
+        Vector3 force = Vector3.zero;
+        foreach (var neighbor in neighbors)
+        {
+            force += (pos - neighbor.pos).normalized;
+        }
+        force /= neighbors.Count;
+
+        accel += force * param.separationWeight;
+    }
 
     private void UpdateWalls()
     {
         if (!simulation) { return;  }
 
         var scale = param.wallScale * 0.5f;
+        Debug.Log(scale);
         accel +=
             CalcAccelAgainstWall(-scale - pos.x, Vector3.right) +
             CalcAccelAgainstWall(-scale - pos.y, Vector3.up) +
@@ -84,15 +116,42 @@ public class Boid : MonoBehaviour
 
     Vector3 CalcAccelAgainstWall(float distance, Vector3 dir)
     {
+        Vector3 wallDir;
+
         if (distance < param.wallDistance)
         {
-            return dir * (param.wallWeight / Mathf.Abs(distance / param.wallDistance));
+            wallDir = dir * (param.wallWeight / Mathf.Abs(distance / param.wallDistance));
+            //Debug.Log(wallDir);
+            return wallDir;
         }
         return Vector3.zero;
     }
 
-    /*private void UpdateNeighbors()
+    private void UpdateNeighbors()
     {
-        throw new NotImplementedException();
-    }*/
+        neighbors.Clear();
+
+        if (!simulation) return;
+
+        var prodThresh = Mathf.Cos(param.neighborFov * Mathf.Deg2Rad);
+        var distThresh = param.neighborDistance;
+
+        foreach (var other in simulation.boids)
+        {
+            if (other == this) continue;
+
+            var to = other.pos - pos;
+            var dist = to.magnitude;
+            if (dist < distThresh)
+            {
+                var dir = to.normalized;
+                var fwd = velocity.normalized;
+                var prod = Vector3.Dot(fwd, dir);
+                if (prod > prodThresh)
+                {
+                    neighbors.Add(other);
+                }
+            }
+        }
+    }
 }

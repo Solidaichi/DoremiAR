@@ -532,6 +532,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 865925763457700752, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 1415736272961387841, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -650,7 +655,7 @@ PrefabInstance:
     - target: {fileID: 7720429395834518206, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7723382440931846598, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
@@ -687,7 +692,8 @@ PrefabInstance:
       propertyPath: GrassWiggle
       value: 0.329
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6852139530945381062, guid: 1ed1178292c44514a9c439d9830dcf4d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1ed1178292c44514a9c439d9830dcf4d, type: 3}
 --- !u!1 &1440490817 stripped
 GameObject:
