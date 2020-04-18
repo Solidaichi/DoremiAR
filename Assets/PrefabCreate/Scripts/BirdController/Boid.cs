@@ -115,14 +115,14 @@ public class Boid : MonoBehaviour
         var scale = param.wallScale * 0.5f;
         Debug.Log(scale);
         //float accelCalc = -scale - pos.x;
-        Debug.Log("AccelCalc : " + pos.x);
+        //Debug.Log("AccelCalc : " + accelCalc);
         accel +=
-            CalcAccelAgainstWall(-scale - pos.x, new Vector3(pos.x, 0, 0) ) +
-            CalcAccelAgainstWall(-scale - pos.y, new Vector3(0, pos.y, 0)) +
-            CalcAccelAgainstWall(-scale - pos.z, new Vector3(0, 0, pos.z)) +
-            CalcAccelAgainstWall(+scale - pos.x, new Vector3(-pos.x, 0, 0)) +
-            CalcAccelAgainstWall(+scale - pos.y, new Vector3(0, -pos.y, 0)) +
-            CalcAccelAgainstWall(+scale - pos.z, new Vector3(0, 0, -pos.z));
+            CalcAccelAgainstWall(-scale - pos.x, Vector3.right ) +
+            CalcAccelAgainstWall(-scale - pos.y, Vector3.up) +
+            CalcAccelAgainstWall(-scale - pos.z, Vector3.forward) +
+            CalcAccelAgainstWall(+scale - pos.x, Vector3.left) +
+            CalcAccelAgainstWall(+scale - pos.y, Vector3.down) +
+            CalcAccelAgainstWall(+scale - pos.z, Vector3.back);
 
         //Debug.Log("accel True : " + accel);
     }
