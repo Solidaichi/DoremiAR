@@ -13,6 +13,8 @@ public class Boid : MonoBehaviour
     [SerializeField]
     GameObject posObj;
 
+
+
     Vector3 accel = Vector3.zero;
     List<Boid> neighbors = new List<Boid>();
 
@@ -77,7 +79,7 @@ public class Boid : MonoBehaviour
         transform.SetPositionAndRotation(pos, rot);
 
         accel = Vector3.zero;
-        Debug.Log("UpdateMove");
+        //Debug.Log("UpdateMove");
     }
 
     private void UpdateAlignment()
@@ -117,12 +119,12 @@ public class Boid : MonoBehaviour
         //float accelCalc = -scale - pos.x;
         //Debug.Log("AccelCalc : " + accelCalc);
         accel +=
-            CalcAccelAgainstWall(-scale - pos.x, Vector3.right ) +
-            CalcAccelAgainstWall(-scale - pos.y, Vector3.up) +
-            CalcAccelAgainstWall(-scale - pos.z, Vector3.forward) +
-            CalcAccelAgainstWall(+scale - pos.x, Vector3.left) +
-            CalcAccelAgainstWall(+scale - pos.y, Vector3.down) +
-            CalcAccelAgainstWall(+scale - pos.z, Vector3.back);
+            CalcAccelAgainstWall(-scale - pos.x, new Vector3(pos.x + 1, 0, 0)) +
+            CalcAccelAgainstWall(-scale - pos.y, new Vector3(0, pos.y + 1, 0)) +
+            CalcAccelAgainstWall(-scale - pos.z, new Vector3(0, 0, pos.z + 1)) +
+            CalcAccelAgainstWall(+scale - pos.x, new Vector3(pos.x - 1, 0, 0)) +
+            CalcAccelAgainstWall(+scale - pos.y, new Vector3(0, pos.y - 1, 0)) +
+            CalcAccelAgainstWall(+scale - pos.z, new Vector3(0,0,pos.z - 1));
 
         //Debug.Log("accel True : " + accel);
     }
@@ -130,7 +132,7 @@ public class Boid : MonoBehaviour
     Vector3 CalcAccelAgainstWall(float distance, Vector3 dir)
     {
         Vector3 wallDir;
-
+        Debug.Log("dir True : " + dir);
         if (distance < param.wallDistance)
         {
             wallDir = dir * (param.wallWeight / Mathf.Abs(distance / param.wallDistance));

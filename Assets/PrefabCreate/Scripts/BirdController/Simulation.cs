@@ -70,6 +70,6 @@ public class Simulation : MonoBehaviour
         if (!param) return;
         Gizmos.color = Color.green;
         // dominoObj.transform.position
-        Gizmos.DrawWireCube(Vector3.zero, Vector3.one * param.wallScale);
+        Gizmos.DrawWireCube(dominoObj.transform.position, Vector3.one * param.wallScale);
     }
 }
