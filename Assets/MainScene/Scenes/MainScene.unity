@@ -525,6 +525,28 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 825584516}
   m_Enabled: 1
+--- !u!1 &1325891641 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4329368263295538867, guid: 1ed1178292c44514a9c439d9830dcf4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1440490816}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1325891643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325891641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5f073332d665f54783f9b3c7986953b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boidCount: 3
+  boidPrefab: {fileID: 7487746391183428758, guid: 7b0e6dc98409d5643915d7f9cb366cb4,
+    type: 3}
+  param: {fileID: 11400000, guid: 5e17bc24fc9f6564da72a796df38d051, type: 2}
 --- !u!1001 &1440490816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -592,7 +614,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Doremi_AR_obj
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1440490818, guid: 1ed1178292c44514a9c439d9830dcf4d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1ed1178292c44514a9c439d9830dcf4d, type: 3}
 --- !u!1 &1571457297
 GameObject:
