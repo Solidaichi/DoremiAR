@@ -679,7 +679,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 2000
+    maxNumParticles: 1500
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -2871,7 +2871,7 @@ ParticleSystem:
     scrollSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -5065,7 +5065,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 243599824091497972, guid: 89ef2123a31ebe547959c299198012c1,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: a7be881bc0772fc43add174ae385ab14, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -5193,7 +5193,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 243703940283072516, guid: 89ef2123a31ebe547959c299198012c1,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 16a07621d1bc9a846bb265d15fb71f4c, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
