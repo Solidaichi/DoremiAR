@@ -592,6 +592,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Doremi_AR_obj
       objectReference: {fileID: 0}
+    - target: {fileID: 8593247339493746831, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ed1178292c44514a9c439d9830dcf4d, type: 3}
 --- !u!1 &1571457297
