@@ -359,6 +359,7 @@ GameObject:
   - component: {fileID: 477327739}
   - component: {fileID: 477327738}
   - component: {fileID: 477327737}
+  - component: {fileID: 477327740}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -428,7 +429,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 477327738}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 477327740}
+        m_MethodName: PianoStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &477327738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,6 +477,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 477327735}
   m_CullTransparentMesh: 0
+--- !u!114 &477327740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477327735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e71401f581f30444bb110f0fc0402be2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placeOnPlaneObj: {fileID: 1571457297}
+  placeOnPlane: {fileID: 0}
 --- !u!1 &633987594 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1306796905, guid: 1ed1178292c44514a9c439d9830dcf4d,
@@ -547,7 +573,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &802268016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -844,6 +870,7 @@ GameObject:
   - component: {fileID: 1073169080}
   - component: {fileID: 1073169079}
   - component: {fileID: 1073169078}
+  - component: {fileID: 1073169081}
   m_Layer: 5
   m_Name: Stop
   m_TagString: Untagged
@@ -913,7 +940,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1073169079}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1073169081}
+        m_MethodName: PianoStop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1073169079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -950,6 +988,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1073169076}
   m_CullTransparentMesh: 0
+--- !u!114 &1073169081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073169076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a9592c2bf46d6c40a61e84fff27b4a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placeOnPlaneObj: {fileID: 1571457297}
+  placeOnPlane: {fileID: 0}
 --- !u!1 &1155942092
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,7 +1138,7 @@ PrefabInstance:
     - target: {fileID: 8593247339493746831, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ed1178292c44514a9c439d9830dcf4d, type: 3}
@@ -1181,6 +1233,7 @@ MonoBehaviour:
   windSoundObj: {fileID: 633987594}
   pianoSoundObj: {fileID: 1923805157}
   uiObj: {fileID: 802268015}
+  pianoStartBool: 0
 --- !u!1 &1923805157 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1923805157, guid: 1ed1178292c44514a9c439d9830dcf4d,

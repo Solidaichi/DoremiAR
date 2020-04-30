@@ -10,14 +10,15 @@ using UnityEngine.XR.ARSubsystems;
 public class PlaceOnPlane : MonoBehaviour
 {
     [SerializeField, Tooltip("AR空間に表示するプレハブを登録")] GameObject arObj;
-    [SerializeField] GameObject birdSoundObj, windSoundObj, pianoSoundObj, uiObj;
+    public GameObject birdSoundObj, windSoundObj, pianoSoundObj, uiObj;
 
-    [HideInInspector] bool pianoBtn, piano;
+    [HideInInspector]public bool pianoStartBool;
 
     private GameObject spawnedObject;
     private ARRaycastManager raycastManager;
-    private AudioSource birdSound, windSound, pianoSound;
+    [HideInInspector] public AudioSource birdSound, windSound, pianoSound;
     private static List<ARRaycastHit> hits = new List<ARRaycastHit>();
+    private bool pianoBtn;
 
     private void Awake()
     {
@@ -35,7 +36,7 @@ public class PlaceOnPlane : MonoBehaviour
 
     void Update()
     {
-        if (Input.touchCount > 0)
+        if (Input.touchCount > 0 && Input.touchCount < 2)
         {
             Vector2 touchPosition = Input.GetTouch(0).position;
             if (raycastManager.Raycast(touchPosition, hits, TrackableType.Planes))
@@ -50,10 +51,11 @@ public class PlaceOnPlane : MonoBehaviour
                 else
                 {
                     spawnedObject = Instantiate(arObj, hitPose.position, Quaternion.identity);
-                    birdSound.Play();
-                    windSound.Play();
+                    //birdSound.Play();
+                    //windSound.Play();
 
                     pianoBtn = true;
+                    
                 }
             }
         }
@@ -63,6 +65,16 @@ public class PlaceOnPlane : MonoBehaviour
             uiObj.SetActive(true);
         }
 
-        if ()
+        if (pianoStartBool)
+        {
+            pianoSound.Play();
+            Debug.Log("pianoSound" + pianoSound);
+        }
+        else
+        {
+            //pianoSoundObj.GetComponent<AudioSource>().Stop();
+        }
+
+        
     }
 }
