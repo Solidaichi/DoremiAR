@@ -6410,6 +6410,11 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4618103890267034102, guid: 393f43fb612a3d74e96719f3a6a34e2f,
+        type: 3}
+      propertyPath: Priority
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4618103890267034103, guid: 393f43fb612a3d74e96719f3a6a34e2f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6746,6 +6751,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bird_Sound
+      objectReference: {fileID: 0}
+    - target: {fileID: 8015129352833923794, guid: 6aca205046971974bb66fbf03557d3b1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8015129352833923795, guid: 6aca205046971974bb66fbf03557d3b1,
         type: 3}
@@ -8287,6 +8297,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wind_Sound
+      objectReference: {fileID: 0}
+    - target: {fileID: 7068465163838664608, guid: 1ffcad5277232544e80404f10768e1a8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7068465163838664611, guid: 1ffcad5277232544e80404f10768e1a8,
         type: 3}

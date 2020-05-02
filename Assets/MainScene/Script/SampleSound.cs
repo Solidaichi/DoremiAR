@@ -25,7 +25,8 @@ public class SampleSound : MonoBehaviour
     {
         if (pianoStartBool && !pianoOnceBool)
         {
-            pianoSound.Play();
+            Invoke("PianoStart", 1.0f);
+
             Debug.Log("PianoStart" + pianoSound);
             
             pianoOnceBool = true;
@@ -35,5 +36,10 @@ public class SampleSound : MonoBehaviour
             pianoSound.Stop();
             pianoOnceBool = false;
         }
+    }
+
+    void PianoStart()
+    {
+        pianoSound.Play();
     }
 }

@@ -54,26 +54,16 @@ public class PlaceOnPlane : MonoBehaviour
                     //birdSound.Play();
                     //windSound.Play();
 
-                    //pianoBtn = true;
+                    pianoBtn = true;
                     
                 }
             }
         }
 
-        /*if (pianoBtn)
+        if (pianoBtn)
         {
             uiObj.SetActive(true);
         }
-
-        if (pianoStartBool)
-        {
-            pianoSound.Play();
-            Debug.Log("pianoSound" + pianoSound);
-        }
-        else
-        {
-            //pianoSoundObj.GetComponent<AudioSource>().Stop();
-        }*/
 
         
     }
