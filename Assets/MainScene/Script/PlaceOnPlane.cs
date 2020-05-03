@@ -10,7 +10,7 @@ using UnityEngine.XR.ARSubsystems;
 public class PlaceOnPlane : MonoBehaviour
 {
     [SerializeField, Tooltip("AR空間に表示するプレハブを登録")] GameObject arObj;
-    public GameObject birdSoundObj, windSoundObj, pianoSoundObj, uiObj;
+    public GameObject birdSoundObj, windSoundObj, uiObj;
 
     [HideInInspector]public bool pianoStartBool;
 
@@ -29,7 +29,7 @@ public class PlaceOnPlane : MonoBehaviour
     {
         birdSound = birdSoundObj.GetComponent<AudioSource>();
         windSound = windSoundObj.GetComponent<AudioSource>();
-        pianoSound = pianoSoundObj.GetComponent<AudioSource>();
+        pianoSound = this.GetComponent<AudioSource>();
 
         pianoBtn = false;
     }

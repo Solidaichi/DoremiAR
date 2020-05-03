@@ -6405,6 +6405,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sound
       objectReference: {fileID: 0}
+    - target: {fileID: 4618103890267034100, guid: 393f43fb612a3d74e96719f3a6a34e2f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4618103890267034102, guid: 393f43fb612a3d74e96719f3a6a34e2f,
         type: 3}
       propertyPath: m_PlayOnAwake
@@ -6415,6 +6420,11 @@ PrefabInstance:
       propertyPath: Priority
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4618103890267034102, guid: 393f43fb612a3d74e96719f3a6a34e2f,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 442d401b65062af40861d8c6fbe33eca, type: 3}
     - target: {fileID: 4618103890267034103, guid: 393f43fb612a3d74e96719f3a6a34e2f,
         type: 3}
       propertyPath: m_LocalPosition.x
