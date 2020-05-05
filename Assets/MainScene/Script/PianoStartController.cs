@@ -8,7 +8,7 @@ public class PianoStartController : MonoBehaviour
     public GameObject pianoSound;
 
     //[HideInInspector] public PlaceOnPlane placeOnPlane;
-    public SampleSound s ampleSound;
+    public SampleSound sampleSound;
 
     private void Start()
     {
