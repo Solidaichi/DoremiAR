@@ -194,7 +194,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -679,7 +679,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1500
+    maxNumParticles: 500
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -944,7 +944,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 50
+      scalar: 30
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -6518,17 +6518,17 @@ PrefabInstance:
     - target: {fileID: 8690542827623584977, guid: 188c62f1c6f36dd4381381872c8efe05,
         type: 3}
       propertyPath: WindStrenght
-      value: 0.166
+      value: 0.122
       objectReference: {fileID: 0}
     - target: {fileID: 8690542827623584977, guid: 188c62f1c6f36dd4381381872c8efe05,
         type: 3}
       propertyPath: WindSpeed
-      value: 0.123
+      value: 0.127
       objectReference: {fileID: 0}
     - target: {fileID: 8690542827623584977, guid: 188c62f1c6f36dd4381381872c8efe05,
         type: 3}
       propertyPath: LeavesWiggle
-      value: 0.345
+      value: 0.191
       objectReference: {fileID: 0}
     - target: {fileID: 8690542827623584977, guid: 188c62f1c6f36dd4381381872c8efe05,
         type: 3}
@@ -6538,7 +6538,7 @@ PrefabInstance:
     - target: {fileID: 8690542827623584977, guid: 188c62f1c6f36dd4381381872c8efe05,
         type: 3}
       propertyPath: WindTurbulence
-      value: 0.123
+      value: 0.103
       objectReference: {fileID: 0}
     - target: {fileID: 8690542827623584978, guid: 188c62f1c6f36dd4381381872c8efe05,
         type: 3}
@@ -8236,7 +8236,7 @@ PrefabInstance:
     - target: {fileID: 1029247961729739405, guid: e8b3085889e9e6b42957cadeedc31b28,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1029247961729739405, guid: e8b3085889e9e6b42957cadeedc31b28,
         type: 3}

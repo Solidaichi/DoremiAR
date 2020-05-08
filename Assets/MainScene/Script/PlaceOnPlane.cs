@@ -14,9 +14,9 @@ public class PlaceOnPlane : MonoBehaviour
 
     [HideInInspector]public bool pianoStartBool;
 
-    private GameObject spawnedObject;
+    public GameObject spawnedObject;
     private ARRaycastManager raycastManager;
-    [HideInInspector] public AudioSource birdSound, windSound, pianoSound;
+    //[HideInInspector] bool destroyObj;
     private static List<ARRaycastHit> hits = new List<ARRaycastHit>();
     private bool pianoBtn;
 
@@ -27,16 +27,14 @@ public class PlaceOnPlane : MonoBehaviour
 
     private void Start()
     {
-        birdSound = birdSoundObj.GetComponent<AudioSource>();
-        windSound = windSoundObj.GetComponent<AudioSource>();
-        pianoSound = this.GetComponent<AudioSource>();
+        
 
         pianoBtn = false;
     }
 
     void Update()
     {
-        if (Input.touchCount > 0 && Input.touchCount < 2)
+        if (Input.touchCount > 0)
         {
             Vector2 touchPosition = Input.GetTouch(0).position;
             if (raycastManager.Raycast(touchPosition, hits, TrackableType.Planes))
@@ -47,6 +45,7 @@ public class PlaceOnPlane : MonoBehaviour
                 if (spawnedObject)
                 {
                     spawnedObject.transform.position = hitPose.position;
+                    
                 }
                 else
                 {
