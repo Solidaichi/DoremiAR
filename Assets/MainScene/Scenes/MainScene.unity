@@ -325,7 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f66da7470dce8f4d821d71dd2b1d4ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DestroyOnRemoval: 0
+  m_DestroyOnRemoval: 1
   m_VertexChangedThreshold: 0.01
 --- !u!4 &230767340
 Transform:
@@ -690,9 +690,7 @@ MonoBehaviour:
   windSoundObj: {fileID: 0}
   uiObj: {fileID: 802268015}
   pianoStartBool: 0
-  birdSound: {fileID: 0}
-  windSound: {fileID: 0}
-  pianoSound: {fileID: 0}
+  spawnedObject: {fileID: 0}
 --- !u!82 &1571457303
 AudioSource:
   m_ObjectHideFlags: 0
@@ -703,7 +701,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 442d401b65062af40861d8c6fbe33eca, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a9edafb20ee1cbb4aa049045fba4234f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -966,9 +964,8 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2925068071472062942, guid: 597a890db9728544888a777aae18ec3b,
-        type: 3}
-      propertyPath: placeOnPlaneObj
+    - target: {fileID: 1678761451, guid: 597a890db9728544888a777aae18ec3b, type: 3}
+      propertyPath: arSessionOrigine
       value: 
       objectReference: {fileID: 1571457297}
     - target: {fileID: 2925068071472062942, guid: 597a890db9728544888a777aae18ec3b,
@@ -980,11 +977,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 2925068071738212360, guid: 597a890db9728544888a777aae18ec3b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2925068071738212372, guid: 597a890db9728544888a777aae18ec3b,
         type: 3}
@@ -1091,11 +1083,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2925068071949947419, guid: 597a890db9728544888a777aae18ec3b,
-        type: 3}
-      propertyPath: placeOnPlaneObj
-      value: 
-      objectReference: {fileID: 1571457297}
     - target: {fileID: 2925068071949947419, guid: 597a890db9728544888a777aae18ec3b,
         type: 3}
       propertyPath: pianoSound
