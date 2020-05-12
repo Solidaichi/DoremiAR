@@ -11,12 +11,14 @@ public class ImageFadeManager : MonoBehaviour
     [SerializeField] private float fadeStart = 1f; // フェード開始時間
     private bool fadeIn; // trueの場合はフェードイン
     [SerializeField] private float fadeSpeed = 1f; // フェード速度指定
+    [HideInInspector] public bool textBool;
 
     // Start is called before the first frame update
     void Start()
     {
         imageObj = this.gameObject; // 自分のオブジェクト取得
         fadeIn = true;
+        textBool = false;
     }
 
     // Update is called once per frame
@@ -40,18 +42,18 @@ public class ImageFadeManager : MonoBehaviour
 
     private void fadeOutFunction()
     {
-
-        /*if (imageObj.GetComponent<Image>().color.a > 254)
+        Debug.Log("alpha : " + imageObj.GetComponent<Image>().color.a);
+        if (imageObj.GetComponent<Image>().color.a > -5)
         {
-            Debug.Log("fadeout");
+            //Debug.Log("fadeout");
             Color tmp = imageObj.GetComponent<Image>().color;
             tmp.a = tmp.a - (Time.deltaTime * fadeSpeed);
-            imageObj.GetComponent<Image>().color = tmp;
-        }*/
-        Debug.Log("fadeout");
-        Color tmp = imageObj.GetComponent<Image>().color;
-        tmp.a = tmp.a - (Time.deltaTime * fadeSpeed);
-        imageObj.GetComponent<Image>().color = tmp;
+            imageObj.GetComponent<Image>().color = tmp;        
+        }else
+        {
+            Invoke("TextFadeActFunction", 3f);
+        }
+        
     }
 
     void fadeInFunction()
@@ -64,11 +66,17 @@ public class ImageFadeManager : MonoBehaviour
             imageObj.GetComponent<Image>().color = tmp;
         }
 
-        Invoke("FadeSwtFunction", 6f);
+        Invoke("FadeSwtFunction", 5f);
     }
 
     void FadeSwtFunction()
     {
         fadeIn = false;
+    }
+
+    void TextFadeActFunction()
+    {
+        textBool = true;
+        this.GetComponent<ImageFadeManager>().enabled = false;
     }
 }
