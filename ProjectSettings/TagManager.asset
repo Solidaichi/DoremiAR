@@ -9,6 +9,10 @@ TagManager:
   - BirdSound
   - domino
   - UI
+  - WoodA
+  - WoodB
+  - WoodC
+  - WoodD
   layers:
   - Default
   - TransparentFX
