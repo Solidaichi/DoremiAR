@@ -46,7 +46,7 @@ public class PlaceOnPlane : MonoBehaviour
 
                 if (spawnedObject)
                 {
-                    spawnedObject.transform.position = hitPose.position;
+                    //spawnedObject.transform.position = hitPose.position;
                     Debug.Log("hit");
 
                 }
