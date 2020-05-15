@@ -34,21 +34,25 @@ public class PlaceOnPlane : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("Spawnobject : " + spawnedObject);
         if (Input.touchCount > 0)
         {
             Vector2 touchPosition = Input.GetTouch(0).position;
             if (raycastManager.Raycast(touchPosition, hits, TrackableType.Planes))
             {
                 // Raycastの衝突情報は距離によってソートされるため、0番目が最も近い場所でヒットした情報となります
+                
                 var hitPose = hits[0].pose;
 
                 if (spawnedObject)
                 {
                     spawnedObject.transform.position = hitPose.position;
-                    
+                    Debug.Log("hit");
+
                 }
                 else
                 {
+                    Debug.Log("Spawn");
                     spawnedObject = Instantiate(arObj, hitPose.position, Quaternion.identity);
                     //birdSound.Play();
                     //windSound.Play();

@@ -6,6 +6,8 @@ public class ARObjDestroyController : MonoBehaviour
 {
     public GameObject arSessionOrigine;
     [HideInInspector] public PlaceOnPlane place; 
+    //[SerializeField] private GameObject sample;
+
 
     // Start is called before the first frame update
     void Update()
@@ -15,10 +17,13 @@ public class ARObjDestroyController : MonoBehaviour
 
     public void ObjDestroy()
     {
+        // place.spawnedObject.transform
         foreach (Transform child in place.spawnedObject.transform)
         {
             // 一つずつ破棄する
             Destroy(child.gameObject);
         }
+
+        Destroy(place.spawnedObject);
     }
 }
