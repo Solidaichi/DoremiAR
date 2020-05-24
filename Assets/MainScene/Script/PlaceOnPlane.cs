@@ -19,6 +19,7 @@ public class PlaceOnPlane : MonoBehaviour
     //[HideInInspector] bool destroyObj;
     private static List<ARRaycastHit> hits = new List<ARRaycastHit>();
     private bool pianoBtn;
+    private AudioSource audioSource;
 
     private void Awake()
     {
@@ -48,15 +49,20 @@ public class PlaceOnPlane : MonoBehaviour
                 {
                     //spawnedObject.transform.position = hitPose.position;
                     Debug.Log("hit");
-
+                    if (GameObject.FindWithTag("WoodA").transform.position == hitPose.position)
+                    {
+                        Debug.Log("WoodATouch");
+                        audioSource.Play();
+                    }
                 }
                 else
                 {
                     Debug.Log("Spawn");
                     spawnedObject = Instantiate(arObj, hitPose.position, Quaternion.identity);
+
                     //birdSound.Play();
                     //windSound.Play();
-
+                    audioSource = GameObject.FindWithTag("WoodA").GetComponent<AudioSource>();
                     pianoBtn = true;
                     
                 }
