@@ -1036,6 +1036,7 @@ GameObject:
   - component: {fileID: 1571457299}
   - component: {fileID: 1571457298}
   - component: {fileID: 1571457302}
+  - component: {fileID: 1571457305}
   - component: {fileID: 1571457303}
   - component: {fileID: 1571457304}
   m_Layer: 0
@@ -1226,6 +1227,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pianoStartBool: 0
+--- !u!114 &1571457305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571457297}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac2728e927fa7b4da1b1568b6ee3251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  arCamera: {fileID: 825584517}
 --- !u!1 &1728004508
 GameObject:
   m_ObjectHideFlags: 0
@@ -1316,6 +1333,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 46841256, guid: 1ed1178292c44514a9c439d9830dcf4d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547873498, guid: 1ed1178292c44514a9c439d9830dcf4d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1415736272961387841, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1376,67 +1401,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Doremi_AR_obj
       objectReference: {fileID: 0}
-    - target: {fileID: 8804884218278137518, guid: 1ed1178292c44514a9c439d9830dcf4d,
+    - target: {fileID: 8593247339493746831, guid: 1ed1178292c44514a9c439d9830dcf4d,
         type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.42627758
-      objectReference: {fileID: 0}
-    - target: {fileID: 8804884218278137518, guid: 1ed1178292c44514a9c439d9830dcf4d,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.2268953
-      objectReference: {fileID: 0}
-    - target: {fileID: 8804884218278137518, guid: 1ed1178292c44514a9c439d9830dcf4d,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.21526954
-      objectReference: {fileID: 0}
-    - target: {fileID: 8804884218278137518, guid: 1ed1178292c44514a9c439d9830dcf4d,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.84880215
-      objectReference: {fileID: 0}
-    - target: {fileID: 8804884218278137518, guid: 1ed1178292c44514a9c439d9830dcf4d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 55.219
-      objectReference: {fileID: 0}
-    - target: {fileID: 8804884218278137518, guid: 1ed1178292c44514a9c439d9830dcf4d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -20.701
-      objectReference: {fileID: 0}
-    - target: {fileID: 8804884218278137518, guid: 1ed1178292c44514a9c439d9830dcf4d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 17.549002
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 6335353874097723784, guid: 1ed1178292c44514a9c439d9830dcf4d, type: 3}
+    - {fileID: 1547873496, guid: 1ed1178292c44514a9c439d9830dcf4d, type: 3}
+    - {fileID: 46841255, guid: 1ed1178292c44514a9c439d9830dcf4d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1ed1178292c44514a9c439d9830dcf4d, type: 3}
---- !u!1 &2025359016 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3189880859870063009, guid: 1ed1178292c44514a9c439d9830dcf4d,
-    type: 3}
-  m_PrefabInstance: {fileID: 2025359015}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2025359017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2025359016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 1b0dd5c7b26d6be46a737f60a9c4a74d, type: 2}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 0
 --- !u!1001 &2925068072011866983
 PrefabInstance:
   m_ObjectHideFlags: 0
