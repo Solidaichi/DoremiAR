@@ -1,20 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))] //AudioSourceは必須.
 [DisallowMultipleComponent]     // 複数アタッチできないようにするため
 public class MicrophoneController : MonoBehaviour
 {
+    NoteNameDetector noteName;
+    Text noteText;
+
     void Start()
     {
+        noteName = new NoteNameDetector();
+        noteText = GameObject.FindWithTag("noteText").GetComponent<Text>();
         AudioSource aud = GetComponent<AudioSource>();
         // マイク名、ループするかどうか、AudioClipの秒数、サンプリングレート を指定する
         aud.clip = Microphone.Start(null, true, 10, 44100);
         aud.Play();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         float[] spectrum = new float[256];
         AudioListener.GetSpectrumData(spectrum, 0, FFTWindow.Rectangular);
@@ -35,5 +41,8 @@ public class MicrophoneController : MonoBehaviour
 
         //音声出力のサンプリングレートをF,`spectrum`の長さをQとすると * *`spectrum[N]`には`N* F/ 2 / Q`Hzの周波数成分が含まれています。
         var freq = maxIndex * AudioSettings.outputSampleRate / 2 / spectrum.Length;
+
+        string noteNamesText = noteName.GetNoteName(freq);
+        noteText.text = noteNamesText;
     }
 }
