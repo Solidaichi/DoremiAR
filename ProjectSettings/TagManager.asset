@@ -13,6 +13,7 @@ TagManager:
   - WoodB
   - WoodC
   - WoodD
+  - noteText
   layers:
   - Default
   - TransparentFX
