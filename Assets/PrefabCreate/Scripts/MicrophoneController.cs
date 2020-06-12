@@ -9,6 +9,9 @@ public class MicrophoneController : MonoBehaviour
 {
     // 波形を描画する
     public LineRenderer line;
+    public Text text;
+
+    GameObject natureObj;
 
     // マイクからの音を拾う
     private new AudioSource audio;
@@ -44,6 +47,14 @@ public class MicrophoneController : MonoBehaviour
         float scale = NoteNameDetector.ConvertHertzToScale(hertz);
         string s = NoteNameDetector.ConvertScaleToString(scale);
         Debug.Log(hertz + "Hz, Scale:" + scale + ", " + s);
+        text.text = s;
+
+        if (s == "A+")
+        {
+            natureObj = GameObject.FindWithTag("A+");
+            natureObj.SetActive(true);
+        }
+
 
         // 波形描画
         wave[wave_count] = scale;
