@@ -11,7 +11,7 @@ public class MicrophoneController : MonoBehaviour
     public LineRenderer line;
     public Text text;
 
-    GameObject natureObj;
+    GameObject natureObj, natureObj1;
 
     // マイクからの音を拾う
     private new AudioSource audio;
@@ -49,10 +49,14 @@ public class MicrophoneController : MonoBehaviour
         Debug.Log(hertz + "Hz, Scale:" + scale + ", " + s);
         text.text = s;
 
-        if (s == "A+")
+        if (s == "A2")
         {
-            natureObj = GameObject.FindWithTag("A+");
+            natureObj = GameObject.FindWithTag("A2");
             natureObj.SetActive(true);
+        }else if (s == "D2")
+        {
+            natureObj1 = GameObject.FindWithTag("D2");
+            natureObj1.SetActive(true);
         }
 
 
