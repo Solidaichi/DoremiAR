@@ -424,6 +424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7487746391183462582}
   - component: {fileID: 7487746391173955402}
+  - component: {fileID: 77227141}
   m_Layer: 0
   m_Name: Low Poly Parrot
   m_TagString: Untagged
@@ -438,9 +439,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7487746391183428758}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.322, z: -0.342}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
   m_Children:
   - {fileID: 7487746391183462574}
   - {fileID: 7487746391183462572}
@@ -466,6 +467,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &77227141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7487746391183428758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b290b3259d2d34b4db11217423c5cef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gObject: {fileID: 0}
 --- !u!1 &7487746391183428760
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class BirdController2 : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		speed = 0.5f;
+		speed = 0.4f;
 	}
 
 	// Update is called once per frame

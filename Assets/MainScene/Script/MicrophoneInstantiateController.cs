@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -30,9 +31,28 @@ public class MicrophoneInstantiateController : MonoBehaviour
         Debug.Log(hertz + "Hz, Scale:" + scale + ", " + s);
         //Debug.Log("A+");
 
-        if (s == "A2")
+        if (s.Contains("C") || s.Contains("D") || s.Contains("E"))
         {
-            var natureObj = GameObject.FindWithTag("A2").transform;
+            string tagName = "Rock" + 
+            var natureObj = GameObject.FindWithTag("Rock").transform;
+            Debug.Log(natureObj.name);
+            foreach (Transform child in natureObj.transform)
+            {
+                Debug.Log(child.name);
+                child.gameObject.SetActive(true);
+            }
+        }else if (s.Contains("F") || s.Contains("G") || s == "A+")
+        {
+            var natureObj = GameObject.FindWithTag("Wood").transform;
+            Debug.Log(natureObj.name);
+            foreach (Transform child in natureObj.transform)
+            {
+                Debug.Log(child.name);
+                child.gameObject.SetActive(true);
+            }
+        }else if (s.Contains("B"))
+        {
+            var natureObj = GameObject.FindWithTag("Parrot").transform;
             Debug.Log(natureObj.name);
             foreach (Transform child in natureObj.transform)
             {
@@ -40,23 +60,8 @@ public class MicrophoneInstantiateController : MonoBehaviour
                 child.gameObject.SetActive(true);
             }
         }
-        else if (s == "D2")
-        {
-            var natureObj2 = GameObject.FindWithTag("D2").transform;
-            foreach (Transform child in natureObj2.transform)
-            {
-                Debug.Log(child.name);
-                child.gameObject.SetActive(true);
-            }
-        }
-        else if (s == "C2")
-        {
-            var natureObj3 = GameObject.FindWithTag("C2").transform;
-            foreach (Transform child in natureObj3.transform)
-            {
-                Debug.Log(child.name);
-                child.gameObject.SetActive(true);
-            }
-        }
+        
     }
+
+    
 }
