@@ -424,7 +424,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7487746391183462582}
   - component: {fileID: 7487746391173955402}
-  - component: {fileID: -8656460285059054383}
   m_Layer: 0
   m_Name: Low Poly Parrot
   m_TagString: Untagged
@@ -458,7 +457,7 @@ Animator:
   m_GameObject: {fileID: 7487746391183428758}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 3c7e2122fe2874b4eae030b4201bdece, type: 3}
-  m_Controller: {fileID: 9100000, guid: ef9063ed3443350468950f8153b43ef5, type: 2}
+  m_Controller: {fileID: 9100000, guid: e46d3dc64a6edf64f952850de1ad28d2, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -467,20 +466,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-8656460285059054383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7487746391183428758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6a8c8ae742af3d4f9c55ce8254a0289, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pos: {x: 0, y: 0, z: 0}
-  posObj: {fileID: 8593247339493746831, guid: 1ed1178292c44514a9c439d9830dcf4d, type: 3}
 --- !u!1 &7487746391183428760
 GameObject:
   m_ObjectHideFlags: 0
