@@ -8,16 +8,15 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: IL3DN_Tree_Pine_Leaf
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 5a31b57bf4856e940b34c99ac2bf12b6, type: 3}
   m_ShaderKeywords: EFFECT_HUE_VARIATION GEOM_TYPE_LEAF _ALPHABLEND_ON _BEND_ON _CULLBACKFACES_ON
     _CULLFRONTFACES_ON _FLOAT0_ON _FLOAT1_ON _SHOWBACKFACES_ON _SHOWFRONTFACES_ON
     _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A _WIND_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
-  stringTagMap:
-    RenderType: Transparent
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -126,7 +125,7 @@ Material:
     - _ZWrite: 0
     - __dirty: 1
     m_Colors:
-    - _Color: {r: 0.094117425, g: 0.44313705, b: 0.32116345, a: 1}
+    - _Color: {r: 0.094117455, g: 0.44313708, b: 0.32116348, a: 1}
     - _Color0: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _HueVariation: {r: 1, g: 0.8997179, b: 0.740566, a: 1}
