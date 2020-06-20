@@ -92,7 +92,7 @@ public static class NoteNameDetector
         else if (smod == 21) value = "G+";
         else if (smod == 22) value = "G#";
         else value = "G#+";
-        value += soct + 1;
+        // value += soct + 1;
 
         return value;
     }

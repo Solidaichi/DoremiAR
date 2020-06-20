@@ -9,6 +9,22 @@ public class MicrophoneInstantiateController : MonoBehaviour
     private new AudioSource audio;
     //private string mic_name = "UAB-80";
 
+    private GameObject[] arObjects_Wood, arObjects_Rock, arObjects_Parrot;
+    private string[] arObjTags = {"Rock", "Wood", "Parrot"};
+
+    private void Awake()
+    {
+        for (int i = 0; i < arObjTags.Length; i++)
+        {
+            int length = 0;
+            var natureObj = GameObject.FindWithTag(arObjTags[i]).transform;
+            foreach (Transform child in natureObj.transform)
+            {
+                
+
+            }
+        }
+
     void Start()
     {
 
@@ -33,7 +49,7 @@ public class MicrophoneInstantiateController : MonoBehaviour
 
         if (s.Contains("C") || s.Contains("D") || s.Contains("E"))
         {
-            string tagName = "Rock" + 
+            string tagName = "Rock" +  
             var natureObj = GameObject.FindWithTag("Rock").transform;
             Debug.Log(natureObj.name);
             foreach (Transform child in natureObj.transform)
