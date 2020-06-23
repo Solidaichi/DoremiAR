@@ -35,7 +35,7 @@ public class PlaceOnPlane : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Spawnobject : " + spawnedObject);
+        //Debug.Log("Spawnobject : " + spawnedObject);
         if (Input.touchCount > 0)
         {
             Vector2 touchPosition = Input.GetTouch(0).position;

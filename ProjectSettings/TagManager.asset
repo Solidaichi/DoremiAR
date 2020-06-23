@@ -9,16 +9,15 @@ TagManager:
   - BirdSound
   - domino
   - UI
-  - WoodA
-  - WoodB
-  - WoodC
-  - WoodD
   - noteText
   - D
   - D2
   - A2
   - A+
   - C2
+  - Wood
+  - Rock
+  - Parrot
   layers:
   - Default
   - TransparentFX

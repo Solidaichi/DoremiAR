@@ -10,20 +10,17 @@ public class MicrophoneInstantiateController : MonoBehaviour
     //private string mic_name = "UAB-80";
 
     private GameObject[] arObjects_Wood, arObjects_Rock, arObjects_Parrot;
+
+    [SerializeField]
     private string[] arObjTags = {"Rock", "Wood", "Parrot"};
+    
 
     private void Awake()
     {
-        for (int i = 0; i < arObjTags.Length; i++)
-        {
-            int length = 0;
-            var natureObj = GameObject.FindWithTag(arObjTags[i]).transform;
-            foreach (Transform child in natureObj.transform)
-            {
-                
-
-            }
-        }
+        AwakeObjArray(arObjTags[0], arObjects_Rock);
+        AwakeObjArray(arObjTags[1], arObjects_Wood);
+        AwakeObjArray(arObjTags[2], arObjects_Parrot);
+    }   
 
     void Start()
     {
@@ -49,35 +46,45 @@ public class MicrophoneInstantiateController : MonoBehaviour
 
         if (s.Contains("C") || s.Contains("D") || s.Contains("E"))
         {
-            string tagName = "Rock" +  
-            var natureObj = GameObject.FindWithTag("Rock").transform;
-            Debug.Log(natureObj.name);
-            foreach (Transform child in natureObj.transform)
+            for (int i = 0; i < arObjects_Rock.Length; i++)
             {
-                Debug.Log(child.name);
-                child.gameObject.SetActive(true);
+                foreach (Transform child in arObjects_Rock[i].transform)
+                {
+                    child.gameObject.SetActive(true);
+                }
             }
+            
         }else if (s.Contains("F") || s.Contains("G") || s == "A+")
         {
-            var natureObj = GameObject.FindWithTag("Wood").transform;
-            Debug.Log(natureObj.name);
-            foreach (Transform child in natureObj.transform)
+            for (int i = 0; i < arObjects_Wood.Length; i++)
             {
-                Debug.Log(child.name);
-                child.gameObject.SetActive(true);
-            }
-        }else if (s.Contains("B"))
-        {
-            var natureObj = GameObject.FindWithTag("Parrot").transform;
-            Debug.Log(natureObj.name);
-            foreach (Transform child in natureObj.transform)
-            {
-                Debug.Log(child.name);
-                child.gameObject.SetActive(true);
+                foreach (Transform child in arObjects_Wood[i].transform)
+                {
+                    child.gameObject.SetActive(true);
+                }
             }
         }
-        
+        else if (s.Contains("B"))
+        {
+            for (int i = 0; i < arObjects_Parrot.Length; i++)
+            {
+                foreach (Transform child in arObjects_Parrot[i].transform)
+                {
+                    child.gameObject.SetActive(true);
+                }
+            }
+        }      
     }
 
-    
+    void AwakeObjArray(string tag,  GameObject[] objArrayName)
+    {
+        var natureObj = GameObject.FindWithTag(tag).transform;
+        int i = 0;
+        foreach (Transform child in natureObj.transform)
+        {            
+            objArrayName[i] = child.gameObject;
+            Debug.Log(objArrayName[i]);
+            child.gameObject.SetActive(false);
+        }
+    }
 }
