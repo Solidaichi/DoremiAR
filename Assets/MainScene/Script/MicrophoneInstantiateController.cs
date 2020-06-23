@@ -9,7 +9,7 @@ public class MicrophoneInstantiateController : MonoBehaviour
     private new AudioSource audio;
     //private string mic_name = "UAB-80";
 
-    private GameObject[] arObjects_Wood, arObjects_Rock, arObjects_Parrot;
+    private GameObject arObjects_Wood, arObjects_Rock, arObjects_Parrot;
 
     [SerializeField]
     private string[] arObjTags = {"Rock", "Wood", "Parrot"};
@@ -46,44 +46,40 @@ public class MicrophoneInstantiateController : MonoBehaviour
 
         if (s.Contains("C") || s.Contains("D") || s.Contains("E"))
         {
-            for (int i = 0; i < arObjects_Rock.Length; i++)
+            
+            foreach (Transform child in arObjects_Rock.transform)
             {
-                foreach (Transform child in arObjects_Rock[i].transform)
-                {
-                    child.gameObject.SetActive(true);
-                }
+                child.gameObject.SetActive(true);
             }
+            
             
         }else if (s.Contains("F") || s.Contains("G") || s == "A+")
         {
-            for (int i = 0; i < arObjects_Wood.Length; i++)
+            
+            foreach (Transform child in arObjects_Wood.transform)
             {
-                foreach (Transform child in arObjects_Wood[i].transform)
-                {
-                    child.gameObject.SetActive(true);
-                }
+                child.gameObject.SetActive(true);
             }
+            
         }
         else if (s.Contains("B"))
         {
-            for (int i = 0; i < arObjects_Parrot.Length; i++)
+            
+            foreach (Transform child in arObjects_Parrot.transform)
             {
-                foreach (Transform child in arObjects_Parrot[i].transform)
-                {
-                    child.gameObject.SetActive(true);
-                }
+                child.gameObject.SetActive(true);
             }
+            
         }      
     }
 
-    void AwakeObjArray(string tag,  GameObject[] objArrayName)
+    void AwakeObjArray(string tag,  GameObject objArrayName)
     {
         var natureObj = GameObject.FindWithTag(tag).transform;
-        int i = 0;
         foreach (Transform child in natureObj.transform)
         {            
-            objArrayName[i] = child.gameObject;
-            Debug.Log(objArrayName[i]);
+            objArrayName = child.gameObject;
+            Debug.Log(objArrayName);
             child.gameObject.SetActive(false);
         }
     }

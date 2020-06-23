@@ -15,7 +15,7 @@ public class SampleSound : MonoBehaviour
     void Start()
     {
         pianoSound = GetComponent<AudioSource>();
-        Debug.Log("pianoSound" + pianoSound);
+        //Debug.Log("pianoSound" + pianoSound);
         pianoStartBool = false;
         pianoOnceBool = false;
     }
