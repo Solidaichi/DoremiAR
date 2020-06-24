@@ -34,7 +34,7 @@ public class MicrophoneController : MonoBehaviour
         audio = GetComponent<AudioSource>();
         audio.clip = Microphone.Start(null, true, 10, 44100);  // マイクからのAudio-InをAudioSourceに流す
         audio.loop = true;                                      // ループ再生にしておく
-        //audio.mute = true;                                      // マイクからの入力音なので音を流す必要がない
+        audio.mute = true;                                      // マイクからの入力音なので音を流す必要がない
         while (!(Microphone.GetPosition("") > 0)) { }             // マイクが取れるまで待つ。空文字でデフォルトのマイクを探してくれる
         audio.Play();
     }

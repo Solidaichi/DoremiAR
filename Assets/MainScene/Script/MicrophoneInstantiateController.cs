@@ -17,9 +17,9 @@ public class MicrophoneInstantiateController : MonoBehaviour
 
     private void Awake()
     {
-        AwakeObjArray(arObjTags[0], arObjects_Rock);
-        AwakeObjArray(arObjTags[1], arObjects_Wood);
-        AwakeObjArray(arObjTags[2], arObjects_Parrot);
+        arObjects_Rock = AwakeObjArray(arObjTags[0]);
+        arObjects_Wood = AwakeObjArray(arObjTags[1]);
+        arObjects_Parrot = AwakeObjArray(arObjTags[2]);
     }   
 
     void Start()
@@ -41,14 +41,15 @@ public class MicrophoneInstantiateController : MonoBehaviour
         float hertz = NoteNameDetector.AnalyzeSound(audio, 1024, 0.04f);
         float scale = NoteNameDetector.ConvertHertzToScale(hertz);
         string s = NoteNameDetector.ConvertScaleToString(scale);
-        Debug.Log(hertz + "Hz, Scale:" + scale + ", " + s);
+        //Debug.Log(hertz + "Hz, Scale:" + scale + ", " + s);
         //Debug.Log("A+");
 
         if (s.Contains("C") || s.Contains("D") || s.Contains("E"))
         {
-            
+        
             foreach (Transform child in arObjects_Rock.transform)
             {
+                Debug.Log(child.name);
                 child.gameObject.SetActive(true);
             }
             
@@ -68,19 +69,21 @@ public class MicrophoneInstantiateController : MonoBehaviour
             foreach (Transform child in arObjects_Parrot.transform)
             {
                 child.gameObject.SetActive(true);
-            }
-            
+            }          
         }      
     }
 
-    void AwakeObjArray(string tag,  GameObject objArrayName)
+    GameObject AwakeObjArray(string tag)
     {
-        var natureObj = GameObject.FindWithTag(tag).transform;
-        foreach (Transform child in natureObj.transform)
+        var natureTransform = GameObject.FindWithTag(tag).transform;
+        GameObject natureObj = GameObject.FindWithTag(tag);
+        foreach (Transform child in natureTransform.transform)
         {            
-            objArrayName = child.gameObject;
-            Debug.Log(objArrayName);
+            //objArrayName = child.gameObject;
+            
             child.gameObject.SetActive(false);
         }
+
+        return natureObj;
     }
 }
