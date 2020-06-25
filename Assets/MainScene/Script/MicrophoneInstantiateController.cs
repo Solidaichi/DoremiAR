@@ -70,7 +70,7 @@ public class MicrophoneInstantiateController : MonoBehaviour
             {
                 child.gameObject.SetActive(true);
             }          
-        }      
+        }     
     }
 
     GameObject AwakeObjArray(string tag)
