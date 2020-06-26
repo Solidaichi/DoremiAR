@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Animator))]
@@ -16,18 +13,18 @@ public class BirdMoveController : MonoBehaviour
     [SerializeField] Vector2 yMinMax;
     [SerializeField] Transform homeTarget, flyingTarget;
 
-    [SerializeField]  public bool returnToBase = false;
+    [SerializeField] public bool returnToBase = false;
     [SerializeField] public float randomBaseOffset = 5, delayStart = 0f;
 
     private Animator animator;
     private Rigidbody rigidbody;
-    private Vector3 rotateTarget, position, direction, velocity, randomizedBase; 
+    private Vector3 rotateTarget, position, direction, velocity, randomizedBase;
     private Quaternion lookRotation;
 
     [System.NonSerialized] public float changeTarget = 0f, changeAnim = 0f, timeSinceTarget = 0f, timeSinceAnim = 0f, prevAnim, currentAnim = 0f, prevSpeed, speed, zturn, prevz, turnSpeedBackup;
     [System.NonSerialized] public float distanceFromBase, distanceFromTarget;
 
-      
+
 
     // Start is called before the first frame update
     void Start()
@@ -59,7 +56,8 @@ public class BirdMoveController : MonoBehaviour
             {
                 turnSpeedBackup = turnSpeed;
                 turnSpeed = 300f;
-            }else if (distanceFromBase <= 1f)
+            }
+            else if (distanceFromBase <= 1f)
             {
                 rigidbody.velocity = Vector3.zero;
                 turnSpeed = turnSpeedBackup;
@@ -75,11 +73,13 @@ public class BirdMoveController : MonoBehaviour
             prevSpeed = speed;
 
             if (currentAnim == 0)
-            { 
+            {
                 speed = idleSpeed;
-            } else { 
-                speed = Mathf.Lerp(moveSpeedMinMax.x, moveSpeedMinMax.y, (currentAnim - animSpeedMinMax.x) / (animSpeedMinMax.y - animSpeedMinMax.x)); 
-            }          
+            }
+            else
+            {
+                speed = Mathf.Lerp(moveSpeedMinMax.x, moveSpeedMinMax.y, (currentAnim - animSpeedMinMax.x) / (animSpeedMinMax.y - animSpeedMinMax.x));
+            }
         }
 
         zturn = Mathf.Clamp(Vector3.SignedAngle(rotateTarget, direction, Vector3.up), -45, -45);
@@ -92,7 +92,8 @@ public class BirdMoveController : MonoBehaviour
             if (returnToBase)
             {
                 changeTarget = 2.0f;
-            }else
+            }
+            else
             {
                 changeTarget = Random.Range(changeTargetEveryFromto.x, changeTargetEveryFromto.y);
             }
@@ -104,11 +105,12 @@ public class BirdMoveController : MonoBehaviour
             if (rigidbody.transform.position.y < yMinMax.x + 10f)
             {
                 rotateTarget.y = 1f;
-            }else
+            }
+            else
             {
                 rotateTarget.y = -1f;
             }
-        }       
+        }
 
         changeAnim -= Time.fixedDeltaTime;
         changeTarget -= Time.fixedDeltaTime;
@@ -127,7 +129,8 @@ public class BirdMoveController : MonoBehaviour
         if (prevz < zturn)
         {
             prevz += Mathf.Min(turnSpeed * Time.fixedDeltaTime, zturn - prevz);
-        }else if (prevz >= zturn)
+        }
+        else if (prevz >= zturn)
         {
             prevz -= Mathf.Min(turnSpeed * Time.fixedDeltaTime, prevz - zturn);
         }
@@ -140,10 +143,10 @@ public class BirdMoveController : MonoBehaviour
         {
             rigidbody.velocity = Mathf.Min(idleSpeed, distanceFromBase) * direction;
         }
-       
+
         rigidbody.velocity = Mathf.Lerp(prevSpeed, speed, Mathf.Clamp(timeSinceAnim / switchSeconds, 0f, 1f)) * direction;
 
-        if (rigidbody.transform.position.y < yMinMax.x|| rigidbody.transform.position.y > yMinMax.x)
+        if (rigidbody.transform.position.y < yMinMax.x || rigidbody.transform.position.y > yMinMax.x)
         {
             position = rigidbody.transform.position;
             position.y = Mathf.Clamp(position.y, yMinMax.x, yMinMax.y);
@@ -158,13 +161,16 @@ public class BirdMoveController : MonoBehaviour
         if (returnToBase)
         {
             newDir = homeTarget.position - currentPosition;
-        }else if (distanceFromTarget > radiusMinMax.y)
+        }
+        else if (distanceFromTarget > radiusMinMax.y)
         {
             newDir = flyingTarget.position - currentPosition;
-        }else if (distanceFromTarget < radiusMinMax.x)
+        }
+        else if (distanceFromTarget < radiusMinMax.x)
         {
             newDir = currentPosition - flyingTarget.position;
-        }else
+        }
+        else
         {
             float angleXZ = Random.Range(-Mathf.PI, Mathf.PI);
             float angleY = Random.Range(-Mathf.PI / 48f, Mathf.PI / 48f);
@@ -181,7 +187,8 @@ public class BirdMoveController : MonoBehaviour
         if (Random.Range(0f, 1f) < idleRatio)
         {
             newState = 0f;
-        } else
+        }
+        else
         {
             newState = Random.Range(animSpeedMinMax.x, animSpeedMinMax.y);
         }
@@ -192,7 +199,8 @@ public class BirdMoveController : MonoBehaviour
             if (newState == 0)
             {
                 animator.speed = 1f;
-            }else
+            }
+            else
             {
                 animator.speed = newState;
             }

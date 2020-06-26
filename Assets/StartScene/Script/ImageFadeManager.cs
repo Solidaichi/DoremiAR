@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ImageFadeManager : MonoBehaviour
@@ -33,7 +30,8 @@ public class ImageFadeManager : MonoBehaviour
             if (fadeIn)
             {
                 fadeInFunction();
-            }else
+            }
+            else
             {
                 fadeOutFunction();
             }
@@ -48,19 +46,20 @@ public class ImageFadeManager : MonoBehaviour
             //Debug.Log("fadeout");
             Color tmp = imageObj.GetComponent<Image>().color;
             tmp.a = tmp.a - (Time.deltaTime * fadeSpeed);
-            imageObj.GetComponent<Image>().color = tmp;        
-        }else
+            imageObj.GetComponent<Image>().color = tmp;
+        }
+        else
         {
             Invoke("TextFadeActFunction", 3f);
         }
-        
+
     }
 
     void fadeInFunction()
     {
         if (imageObj.GetComponent<Image>().color.a < 255)
         {
-            
+
             Color tmp = imageObj.GetComponent<Image>().color;
             tmp.a = tmp.a + (Time.deltaTime * fadeSpeed);
             imageObj.GetComponent<Image>().color = tmp;

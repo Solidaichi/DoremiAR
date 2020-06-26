@@ -15,8 +15,8 @@ namespace IL3DN
 
         private void OnEnable()
         {
-            
-           targetScript = (IL3DN_ColorManagerTextures)target;
+
+            targetScript = (IL3DN_ColorManagerTextures)target;
             if (targetScript.materials.Count > 0)
             {
                 loaded = true;

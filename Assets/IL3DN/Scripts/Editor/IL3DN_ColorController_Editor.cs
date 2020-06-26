@@ -1,8 +1,5 @@
 ﻿namespace IL3DN
 {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     using UnityEditor;
     using UnityEngine;
 
@@ -24,7 +21,7 @@
             {
                 texturesScript.Refresh();
             }
-            if(effectsScript!=null)
+            if (effectsScript != null)
             {
                 effectsScript.Refresh();
             }
@@ -59,7 +56,7 @@
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
-            if(targetScript.slot<1)
+            if (targetScript.slot < 1)
             {
                 targetScript.slot = 1;
             }

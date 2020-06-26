@@ -1,23 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BirdController2 : MonoBehaviour
 {
 
-	public GameObject gObject;
+    public GameObject gObject;
 
-	private float speed;
+    private float speed;
 
-	// Use this for initialization
-	void Start()
-	{
-		speed = 0.4f;
-	}
+    // Use this for initialization
+    void Start()
+    {
+        speed = 0.4f;
+    }
 
-	// Update is called once per frame
-	void Update()
-	{
-		transform.RotateAround(gObject.transform.position, Vector3.up, speed);
-	}
+    // Update is called once per frame
+    void Update()
+    {
+        transform.RotateAround(gObject.transform.position, Vector3.up, speed);
+    }
 }

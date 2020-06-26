@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class Boid : MonoBehaviour
@@ -112,7 +110,7 @@ public class Boid : MonoBehaviour
 
     private void UpdateWalls()
     {
-        if (!simulation) { return;  }
+        if (!simulation) { return; }
 
         var scale = param.wallScale * 0.5f;
         Debug.Log(scale);
@@ -124,7 +122,7 @@ public class Boid : MonoBehaviour
             CalcAccelAgainstWall(-scale - pos.z, new Vector3(0, 0, pos.z + 1)) +
             CalcAccelAgainstWall(+scale - pos.x, new Vector3(pos.x - 1, 0, 0)) +
             CalcAccelAgainstWall(+scale - pos.y, new Vector3(0, pos.y - 1, 0)) +
-            CalcAccelAgainstWall(+scale - pos.z, new Vector3(0,0,pos.z - 1));
+            CalcAccelAgainstWall(+scale - pos.z, new Vector3(0, 0, pos.z - 1));
 
         //Debug.Log("accel True : " + accel);
     }

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PianoStopController : MonoBehaviour
 {
@@ -22,6 +20,6 @@ public class PianoStopController : MonoBehaviour
         //placeOnPlane.pianoStartBool = false;
         sampleSound.pianoStartBool = false;
         Debug.Log("BtnFalse");
-        
+
     }
 }

@@ -1,6 +1,6 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using UnityEngine;
 
 public class Simulation : MonoBehaviour
 {
@@ -29,12 +29,12 @@ public class Simulation : MonoBehaviour
 
 
     void AddBoid()
-    {       
+    {
         var go = Instantiate(boidPrefab, dominoObj.transform.position, Random.rotation);
         Debug.Log("go : " + go.transform.position);
         go.transform.SetParent(transform);
         var boid = go.GetComponent<Boid>();
-        
+
         boid.simulation = this;
         boid.param = param;
         boids_.Add(boid);
@@ -62,7 +62,7 @@ public class Simulation : MonoBehaviour
             Debug.Log("Remove");
         }
 
-        
+
     }
 
     void OnDrawGizmos()

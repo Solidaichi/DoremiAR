@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TouchObjController : MonoBehaviour
 {
@@ -15,7 +13,7 @@ public class TouchObjController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -50,8 +48,9 @@ public class TouchObjController : MonoBehaviour
             if (selected != current)
             {
                 current.IsSelected = false;
-                
-            }else
+
+            }
+            else
             {
                 current.IsSelected = true;
                 Debug.Log("TouchWood" + current);

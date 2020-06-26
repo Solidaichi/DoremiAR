@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ARObjDestroyController : MonoBehaviour
 {
     public GameObject arSessionOrigine;
-    [HideInInspector] public PlaceOnPlane place; 
+    [HideInInspector] public PlaceOnPlane place;
     //[SerializeField] private GameObject sample;
 
 

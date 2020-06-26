@@ -12,7 +12,7 @@ public class PlaceOnPlane : MonoBehaviour
     [SerializeField, Tooltip("AR空間に表示するプレハブを登録")] GameObject arObj;
     public GameObject birdSoundObj, windSoundObj, uiObj;
 
-    [HideInInspector]public bool pianoStartBool;
+    [HideInInspector] public bool pianoStartBool;
 
     public GameObject spawnedObject;
     private ARRaycastManager raycastManager;
@@ -28,7 +28,7 @@ public class PlaceOnPlane : MonoBehaviour
 
     private void Start()
     {
-        
+
 
         pianoBtn = false;
     }
@@ -42,7 +42,7 @@ public class PlaceOnPlane : MonoBehaviour
             if (raycastManager.Raycast(touchPosition, hits, TrackableType.Planes))
             {
                 // Raycastの衝突情報は距離によってソートされるため、0番目が最も近い場所でヒットした情報となります
-                
+
                 var hitPose = hits[0].pose;
 
                 if (spawnedObject)
@@ -64,7 +64,7 @@ public class PlaceOnPlane : MonoBehaviour
                     //windSound.Play();
                     audioSource = GameObject.FindWithTag("WoodA").GetComponent<AudioSource>();
                     pianoBtn = true;
-                    
+
                 }
             }
         }
@@ -74,6 +74,6 @@ public class PlaceOnPlane : MonoBehaviour
             uiObj.SetActive(true);
         }
 
-        
+
     }
 }

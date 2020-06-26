@@ -4,29 +4,29 @@ using UnityEngine.SceneManagement;
 
 namespace RuntimeInspectorNamespace
 {
-	public class HierarchyDataRootScene : HierarchyDataRoot
-	{
-		public override string Name { get { return Scene.name; } }
-		public override int ChildCount { get { return rootObjects.Count; } }
+    public class HierarchyDataRootScene : HierarchyDataRoot
+    {
+        public override string Name { get { return Scene.name; } }
+        public override int ChildCount { get { return rootObjects.Count; } }
 
-		public Scene Scene { get; private set; }
+        public Scene Scene { get; private set; }
 
-		private readonly List<GameObject> rootObjects = new List<GameObject>();
+        private readonly List<GameObject> rootObjects = new List<GameObject>();
 
-		public HierarchyDataRootScene( RuntimeHierarchy hierarchy, Scene target ) : base( hierarchy )
-		{
-			Scene = target;
-		}
+        public HierarchyDataRootScene(RuntimeHierarchy hierarchy, Scene target) : base(hierarchy)
+        {
+            Scene = target;
+        }
 
-		public override void RefreshContent()
-		{
-			rootObjects.Clear();
-			Scene.GetRootGameObjects( rootObjects );
-		}
+        public override void RefreshContent()
+        {
+            rootObjects.Clear();
+            Scene.GetRootGameObjects(rootObjects);
+        }
 
-		public override Transform GetChild( int index )
-		{
-			return rootObjects[index].transform;
-		}
-	}
+        public override Transform GetChild(int index)
+        {
+            return rootObjects[index].transform;
+        }
+    }
 }

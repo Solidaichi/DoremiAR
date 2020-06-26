@@ -1,6 +1,5 @@
 ﻿namespace IL3DN
 {
-    using System;
     using System.Collections.Generic;
     using UnityEngine;
 

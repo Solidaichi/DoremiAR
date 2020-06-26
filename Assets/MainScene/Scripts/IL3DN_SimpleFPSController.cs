@@ -4,7 +4,7 @@ namespace IL3DN
     using Random = UnityEngine.Random;
     [RequireComponent(typeof(CharacterController))]
     [RequireComponent(typeof(AudioSource))]
-    
+
     ///A simplified version of the FPSController from standard assets 
     public class IL3DN_SimpleFPSController : MonoBehaviour
     {

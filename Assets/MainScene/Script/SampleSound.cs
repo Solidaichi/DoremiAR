@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SampleSound : MonoBehaviour
 {
@@ -28,7 +26,7 @@ public class SampleSound : MonoBehaviour
             Invoke("PianoStart", 1.0f);
 
             Debug.Log("PianoStart" + pianoSound);
-            
+
             pianoOnceBool = true;
         }
         else if (!pianoStartBool && pianoOnceBool)
