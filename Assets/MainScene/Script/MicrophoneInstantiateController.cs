@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class MicrophoneInstantiateController : MonoBehaviour
 {
@@ -11,19 +12,21 @@ public class MicrophoneInstantiateController : MonoBehaviour
 
     [SerializeField]
     private string[] arObjTags = { "Rock", "Wood", "Parrot" };
-    [SerializeField]
-    private Transform[] arChildObjects_Wood, arChildObjects_Rock, arChildObjects_Parrot;
+
+    private List<Transform> arObjChild_Rock = new List<Transform>(); //Listの宣言
+    private List<Transform> arObjChild_Wood = new List<Transform>(); //Listの宣言
+    private List<Transform> arObjChild_Parrot = new List<Transform>(); //Listの宣言
 
     private void Awake()
     {
-        AwakeObjArray(arObjTags[0]);
-        AwakeObjArray(arObjTags[1]);
-        AwakeObjArray(arObjTags[2]);
+        AwakeObjArrayRock(arObjTags[0]);
+        AwakeObjArrayWood(arObjTags[1]);
+        AwakeObjArrayParrot(arObjTags[2]);
     }
 
     void Start()
     {
-        
+
         audio = GetComponent<AudioSource>();
 
         audio = GetComponent<AudioSource>();
@@ -45,41 +48,73 @@ public class MicrophoneInstantiateController : MonoBehaviour
 
         if (s.Contains("C") || s.Contains("D") || s.Contains("E"))
         {
-            rand = Random.Range(0, arChildObjects_Rock.Length - 1);
-            if (!arChildObjects_Rock[rand].gameObject.activeSelf)
+            rand = Random.Range(0, arObjChild_Rock.Count - 1);
+            if (!arObjChild_Rock[rand].gameObject.activeSelf)
             {
-                arChildObjects_Rock[rand].gameObject.SetActive(true);
+                arObjChild_Rock[rand].gameObject.SetActive(true);
             }
 
         }
         else if (s.Contains("F") || s.Contains("G") || s == "A+")
         {
-            
-            if (!arChildObjects_Wood[rand].gameObject.activeSelf)
+            rand = Random.Range(0, arObjChild_Rock.Count - 1);
+            if (!arObjChild_Wood[rand].gameObject.activeSelf)
             {
-                arChildObjects_Wood[rand].gameObject.SetActive(true);
+                arObjChild_Wood[rand].gameObject.SetActive(true);
             }
 
         }
         else if (s.Contains("B"))
         {
-            rand = Random.Range(0, arChildObjects_Parrot.Length - 1);
+            rand = Random.Range(0, arObjChild_Parrot.Count - 1);
             {
-                arChildObjects_Parrot[rand].gameObject.SetActive(true);
+                arObjChild_Parrot[rand].gameObject.SetActive(true);
             }
         }
     }
 
-     void AwakeObjArray(string tag)
+    void AwakeObjArrayRock(string tag)
+    {
+        var natureTransform = GameObject.FindWithTag(tag).transform;
+
+
+        foreach (Transform child in natureTransform.transform)
+        {
+            //Debug.Log();
+            arObjChild_Rock.Add(child);
+            //Debug.Log(arChildObjects_Wood[i]);
+            child.gameObject.SetActive(false);
+
+        }
+    }
+
+    void AwakeObjArrayWood(string tag)
     {
         var natureTransform = GameObject.FindWithTag(tag).transform;
         int i = 0;
 
         foreach (Transform child in natureTransform.transform)
         {
-            arChildObjects_Wood[i] = child;
+            //Debug.Log();
+            arObjChild_Wood.Add(child);
+            //Debug.Log(arChildObjects_Wood[i]);
             child.gameObject.SetActive(false);
             i++;
-        }       
+        }
+    }
+
+    void AwakeObjArrayParrot(string tag)
+    {
+        var natureTransform = GameObject.FindWithTag(tag).transform;
+
+
+        foreach (Transform child in natureTransform.transform)
+        {
+            //Debug.Log();
+            arObjChild_Parrot.Add(child);
+            //Debug.Log(arChildObjects_Wood[i]);
+            child.gameObject.SetActive(false);
+
+        }
     }
 }
