@@ -812,7 +812,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011676090}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.1612916, y: -1.2132823, z: 0.06847887}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1349,8 +1349,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Doremi_AR_obj
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6190546823571242161, guid: 1ed1178292c44514a9c439d9830dcf4d, type: 3}
+    - target: {fileID: 8593247339493746831, guid: 1ed1178292c44514a9c439d9830dcf4d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ed1178292c44514a9c439d9830dcf4d, type: 3}
 --- !u!1001 &2925068072011866983
 PrefabInstance:
