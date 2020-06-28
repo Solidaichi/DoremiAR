@@ -780,7 +780,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1011676092}
   - component: {fileID: 1011676091}
-  - component: {fileID: 1011676094}
   - component: {fileID: 1011676093}
   m_Layer: 0
   m_Name: Maicrophone
@@ -816,8 +815,8 @@ Transform:
   m_LocalPosition: {x: 2.1612916, y: -1.2132823, z: 0.06847887}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1571457301}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1011676093
 AudioSource:
@@ -916,20 +915,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1011676094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1011676090}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e833ef8bb8645849ac66b768ec52b2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  line: {fileID: 0}
-  text: {fileID: 0}
 --- !u!1 &1155942092
 GameObject:
   m_ObjectHideFlags: 0
@@ -1069,6 +1054,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 825584521}
+  - {fileID: 1011676092}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
