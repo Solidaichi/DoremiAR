@@ -19,7 +19,17 @@ public class PlaceOnPlane : MonoBehaviour
     //[HideInInspector] bool destroyObj;
     private static List<ARRaycastHit> hits = new List<ARRaycastHit>();
     private bool pianoBtn;
-    private AudioSource audioSource;
+    private AudioSource audio;
+
+    private GameObject arObjects_Wood, arObjects_Rock, arObjects_Parrot;
+    private int rand;
+
+    [SerializeField]
+    private string[] arObjTags = { "Rock", "Wood", "Parrot" };
+
+    private List<Transform> arObjChild_Rock = new List<Transform>(); //Listの宣言
+    private List<Transform> arObjChild_Wood = new List<Transform>(); //Listの宣言
+    private List<Transform> arObjChild_Parrot = new List<Transform>(); //Listの宣言
 
     private void Awake()
     {
@@ -28,7 +38,14 @@ public class PlaceOnPlane : MonoBehaviour
 
     private void Start()
     {
+        audio = GetComponent<AudioSource>();
 
+        audio = GetComponent<AudioSource>();
+        audio.clip = Microphone.Start(null, true, 10, 44100);  // マイクからのAudio-InをAudioSourceに流す
+        audio.loop = true;                                      // ループ再生にしておく
+        //audio.mute = true;                                      // マイクからの入力音なので音を流す必要がない
+        while (!(Microphone.GetPosition("") > 0)) { }             // マイクが取れるまで待つ。空文字でデフォルトのマイクを探してくれる
+        audio.Play();
 
         pianoBtn = false;
     }
@@ -48,21 +65,15 @@ public class PlaceOnPlane : MonoBehaviour
                 if (spawnedObject)
                 {
                     //spawnedObject.transform.position = hitPose.position;
-                    Debug.Log("hit");
-                    if (GameObject.FindWithTag("WoodA").transform.position == hitPose.position)
-                    {
-                        Debug.Log("WoodATouch");
-                        audioSource.Play();
-                    }
                 }
                 else
                 {
                     Debug.Log("Spawn");
                     spawnedObject = Instantiate(arObj, hitPose.position, Quaternion.identity);
-
+                    MicrophoneManager();
                     //birdSound.Play();
                     //windSound.Play();
-                    audioSource = GameObject.FindWithTag("WoodA").GetComponent<AudioSource>();
+
                     pianoBtn = true;
 
                 }
@@ -75,5 +86,41 @@ public class PlaceOnPlane : MonoBehaviour
         }
 
 
+    }
+
+    void MicrophoneManager()
+    {
+        // 諸々の解析
+        float hertz = NoteNameDetector.AnalyzeSound(audio, 1024, 0.04f);
+        float scale = NoteNameDetector.ConvertHertzToScale(hertz);
+        string s = NoteNameDetector.ConvertScaleToString(scale);
+        //Debug.Log(hertz + "Hz, Scale:" + scale + ", " + s);
+        //Debug.Log("A+");
+
+        if (s.Contains("C") || s.Contains("D") || s.Contains("E"))
+        {
+            rand = Random.Range(0, arObjChild_Rock.Count - 1);
+            if (!arObjChild_Rock[rand].gameObject.activeSelf)
+            {
+                arObjChild_Rock[rand].gameObject.SetActive(true);
+            }
+
+        }
+        else if (s.Contains("F") || s.Contains("G") || s == "A+")
+        {
+            rand = Random.Range(0, arObjChild_Rock.Count - 1);
+            if (!arObjChild_Wood[rand].gameObject.activeSelf)
+            {
+                arObjChild_Wood[rand].gameObject.SetActive(true);
+            }
+
+        }
+        else if (s.Contains("B"))
+        {
+            rand = Random.Range(0, arObjChild_Parrot.Count - 1);
+            {
+                arObjChild_Parrot[rand].gameObject.SetActive(true);
+            }
+        }
     }
 }

@@ -113,8 +113,10 @@ public class MicrophoneInstantiateController : MonoBehaviour
             //Debug.Log();
             arObjChild_Parrot.Add(child);
             //Debug.Log(arChildObjects_Wood[i]);
-            child.gameObject.SetActive(false);
+            //child.gameObject.SetActive(false);
 
         }
     }
+
+    
 }

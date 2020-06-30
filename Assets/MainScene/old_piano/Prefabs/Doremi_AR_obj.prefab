@@ -164,7 +164,7 @@ Transform:
   m_Father: {fileID: 4472969050137261344}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1435612049169891887
+--- !u!114 &6627499382324314216
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -430,6 +430,19 @@ Transform:
   m_Father: {fileID: 4472969050137261344}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7694293017952852270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7487746391097357431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b290b3259d2d34b4db11217423c5cef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gObject: {fileID: 4684640784704385825}
 --- !u!1 &8296947957369739614
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,6 +559,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Low Poly Parrot (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7487746391183428758, guid: 7b0e6dc98409d5643915d7f9cb366cb4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7487746391183462582, guid: 7b0e6dc98409d5643915d7f9cb366cb4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -604,6 +622,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 77227141, guid: 7b0e6dc98409d5643915d7f9cb366cb4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7b0e6dc98409d5643915d7f9cb366cb4, type: 3}
+--- !u!1 &7487746391097357431 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7487746391183428758, guid: 7b0e6dc98409d5643915d7f9cb366cb4,
+    type: 3}
+  m_PrefabInstance: {fileID: 119650529}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7487746391097583703 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7487746391183462582, guid: 7b0e6dc98409d5643915d7f9cb366cb4,
@@ -625,7 +649,7 @@ PrefabInstance:
     - target: {fileID: 831819630362956168, guid: 86666ed4d31e9fd40b5258cf9867a030,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 831819630362956169, guid: 86666ed4d31e9fd40b5258cf9867a030,
         type: 3}
@@ -726,6 +750,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: IL3DN_Tree_Pine_01 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1528435694271650569, guid: 1bf94060ef0e0a949aac362e611da1b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3648858703753730777, guid: 1bf94060ef0e0a949aac362e611da1b2,
         type: 3}
@@ -837,6 +866,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: IL3DN_Tree_Pine_02 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1847765470402659035, guid: e18d5a2b5ddeb1d47bf52e683cce67ef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9061613975822427690, guid: e18d5a2b5ddeb1d47bf52e683cce67ef,
         type: 3}
@@ -1024,6 +1058,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: IL3DN_Tree_Pine_02 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1847765470402659035, guid: e18d5a2b5ddeb1d47bf52e683cce67ef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9061613975822427690, guid: e18d5a2b5ddeb1d47bf52e683cce67ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1185,6 +1224,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: IL3DN_Rock_Boulder_03
       objectReference: {fileID: 0}
+    - target: {fileID: 6659427257207180123, guid: dfe81af08cc57394489d52c5ab1a3316,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe81af08cc57394489d52c5ab1a3316, type: 3}
 --- !u!4 &6352817011466773516 stripped
@@ -1204,6 +1248,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: IL3DN_Tree_Pine_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647866159854764944, guid: ec825ab1403985c499b6da0199d9ee2d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3287239326923128113, guid: ec825ab1403985c499b6da0199d9ee2d,
         type: 3}
@@ -1306,6 +1355,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: IL3DN_Tree_Pine_02
       objectReference: {fileID: 0}
+    - target: {fileID: 1847765470402659035, guid: e18d5a2b5ddeb1d47bf52e683cce67ef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9061613975822427690, guid: e18d5a2b5ddeb1d47bf52e683cce67ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1402,6 +1456,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: IL3DN_Tree_Pine_02 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1847765470402659035, guid: e18d5a2b5ddeb1d47bf52e683cce67ef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9061613975822427690, guid: e18d5a2b5ddeb1d47bf52e683cce67ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1492,6 +1551,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: IL3DN_Tree_Pine_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1528435694271650569, guid: 1bf94060ef0e0a949aac362e611da1b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3648858703753730777, guid: 1bf94060ef0e0a949aac362e611da1b2,
         type: 3}
@@ -1599,6 +1663,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: IL3DN_Rock_Boulder_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 470123331780626262, guid: a5b864fe7ab693b4ebbfb3e1502aac7e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3360329922263324231, guid: a5b864fe7ab693b4ebbfb3e1502aac7e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1688,6 +1757,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: IL3DN_Tree_Pine_01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1528435694271650569, guid: 1bf94060ef0e0a949aac362e611da1b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3648858703753730777, guid: 1bf94060ef0e0a949aac362e611da1b2,
         type: 3}
@@ -1794,6 +1868,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: IL3DN_Tree_Pine_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1528435694271650569, guid: 1bf94060ef0e0a949aac362e611da1b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3648858703753730777, guid: 1bf94060ef0e0a949aac362e611da1b2,
         type: 3}
@@ -1991,6 +2070,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: IL3DN_Tree_Pine_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1528435694271650569, guid: 1bf94060ef0e0a949aac362e611da1b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3648858703753730777, guid: 1bf94060ef0e0a949aac362e611da1b2,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -2186,6 +2270,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: IL3DN_Tree_Pine_03 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647866159854764944, guid: ec825ab1403985c499b6da0199d9ee2d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3287239326923128113, guid: ec825ab1403985c499b6da0199d9ee2d,
         type: 3}
@@ -2463,6 +2552,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: IL3DN_Dead_Branch_01
       objectReference: {fileID: 0}
+    - target: {fileID: 1493089183462906631, guid: bd6bdc4b46732c3438542dd00e001bdc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4879690996362067849, guid: bd6bdc4b46732c3438542dd00e001bdc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2643,6 +2737,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: IL3DN_Rock_Boulder_01
       objectReference: {fileID: 0}
+    - target: {fileID: 5800906375986613077, guid: ae95750e4caabeb47993e78d5c6ba9f4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6280177913000003068, guid: ae95750e4caabeb47993e78d5c6ba9f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2732,6 +2831,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: IL3DN_Tree_Pine_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1528435694271650569, guid: 1bf94060ef0e0a949aac362e611da1b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3648858703753730777, guid: 1bf94060ef0e0a949aac362e611da1b2,
         type: 3}
@@ -2920,15 +3024,15 @@ PrefabInstance:
       objectReference: {fileID: 15200, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0da06f2ff0ecf1041ab9326237b87a16, type: 3}
---- !u!4 &4684640784704286465 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: 0da06f2ff0ecf1041ab9326237b87a16,
-    type: 3}
-  m_PrefabInstance: {fileID: 4684640784704419201}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4684640784704385825 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 0da06f2ff0ecf1041ab9326237b87a16,
+    type: 3}
+  m_PrefabInstance: {fileID: 4684640784704419201}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4684640784704286465 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 0da06f2ff0ecf1041ab9326237b87a16,
     type: 3}
   m_PrefabInstance: {fileID: 4684640784704419201}
   m_PrefabAsset: {fileID: 0}
@@ -2948,6 +3052,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: IL3DN_Tree_Pine_01_Dead
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636035404169950526, guid: e4437cb2546796048aabad5167d5ca5a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3892653052862682903, guid: e4437cb2546796048aabad5167d5ca5a,
         type: 3}
@@ -3054,6 +3163,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: IL3DN_Rock_Boulder_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 470123331780626262, guid: a5b864fe7ab693b4ebbfb3e1502aac7e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3360329922263324231, guid: a5b864fe7ab693b4ebbfb3e1502aac7e,
         type: 3}
@@ -3240,6 +3354,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: IL3DN_Tree_Pine_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1847765470402659035, guid: e18d5a2b5ddeb1d47bf52e683cce67ef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9061613975822427690, guid: e18d5a2b5ddeb1d47bf52e683cce67ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3330,6 +3449,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: IL3DN_Tree_Pine_01 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1528435694271650569, guid: 1bf94060ef0e0a949aac362e611da1b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3648858703753730777, guid: 1bf94060ef0e0a949aac362e611da1b2,
         type: 3}
@@ -3436,6 +3560,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: IL3DN_Tree_Pine_03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647866159854764944, guid: ec825ab1403985c499b6da0199d9ee2d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3287239326923128113, guid: ec825ab1403985c499b6da0199d9ee2d,
         type: 3}
@@ -3693,6 +3822,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: IL3DN_Rock_Boulder_03 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6659427257207180123, guid: dfe81af08cc57394489d52c5ab1a3316,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe81af08cc57394489d52c5ab1a3316, type: 3}
 --- !u!4 &440729687664593047 stripped
@@ -3712,6 +3846,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Low Poly Parrot
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487746391183428758, guid: 7b0e6dc98409d5643915d7f9cb366cb4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7487746391183462582, guid: 7b0e6dc98409d5643915d7f9cb366cb4,
         type: 3}
@@ -3783,17 +3922,18 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.03
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 77227141, guid: 7b0e6dc98409d5643915d7f9cb366cb4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7b0e6dc98409d5643915d7f9cb366cb4, type: 3}
---- !u!4 &3603139333781751938 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7487746391183462582, guid: 7b0e6dc98409d5643915d7f9cb366cb4,
-    type: 3}
-  m_PrefabInstance: {fileID: 6190546823648155700}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3603139333781656738 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7487746391183428758, guid: 7b0e6dc98409d5643915d7f9cb366cb4,
+    type: 3}
+  m_PrefabInstance: {fileID: 6190546823648155700}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3603139333781751938 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7487746391183462582, guid: 7b0e6dc98409d5643915d7f9cb366cb4,
     type: 3}
   m_PrefabInstance: {fileID: 6190546823648155700}
   m_PrefabAsset: {fileID: 0}
@@ -3813,6 +3953,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: IL3DN_Tree_Pine_01_Dead (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636035404169950526, guid: e4437cb2546796048aabad5167d5ca5a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3892653052862682903, guid: e4437cb2546796048aabad5167d5ca5a,
         type: 3}
@@ -3919,6 +4064,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: IL3DN_Tree_Pine_01 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1528435694271650569, guid: 1bf94060ef0e0a949aac362e611da1b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3648858703753730777, guid: 1bf94060ef0e0a949aac362e611da1b2,
         type: 3}
@@ -4121,6 +4271,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: IL3DN_Tree_Pine_01_Dead (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1636035404169950526, guid: e4437cb2546796048aabad5167d5ca5a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3892653052862682903, guid: e4437cb2546796048aabad5167d5ca5a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4316,6 +4471,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: IL3DN_Tree_Pine_03_Dead
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286375058295845431, guid: 020ef7e1303cbe74ca95c3625530e600,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1303206975150640509, guid: 020ef7e1303cbe74ca95c3625530e600,
         type: 3}
@@ -4527,6 +4687,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: IL3DN_Tree_Pine_01 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1528435694271650569, guid: 1bf94060ef0e0a949aac362e611da1b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3648858703753730777, guid: 1bf94060ef0e0a949aac362e611da1b2,
         type: 3}
@@ -5083,6 +5248,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: IL3DN_Tree_Pine_01 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1528435694271650569, guid: 1bf94060ef0e0a949aac362e611da1b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3648858703753730777, guid: 1bf94060ef0e0a949aac362e611da1b2,
         type: 3}
