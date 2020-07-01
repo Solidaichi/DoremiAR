@@ -18,7 +18,7 @@ public class PlaceOnPlane : MonoBehaviour
     private ARRaycastManager raycastManager;
     //[HideInInspector] bool destroyObj;
     private static List<ARRaycastHit> hits = new List<ARRaycastHit>();
-    private bool pianoBtn;
+    private bool pianoBtn, microphoneSwt;
     private AudioSource audio;
 
     private GameObject arObjects_Wood, arObjects_Rock, arObjects_Parrot;
@@ -38,7 +38,6 @@ public class PlaceOnPlane : MonoBehaviour
 
     private void Start()
     {
-        audio = GetComponent<AudioSource>();
 
         audio = GetComponent<AudioSource>();
         audio.clip = Microphone.Start(null, true, 10, 44100);  // マイクからのAudio-InをAudioSourceに流す
@@ -48,6 +47,7 @@ public class PlaceOnPlane : MonoBehaviour
         audio.Play();
 
         pianoBtn = false;
+        microphoneSwt = false;
     }
 
     void Update()
@@ -70,12 +70,15 @@ public class PlaceOnPlane : MonoBehaviour
                 {
                     Debug.Log("Spawn");
                     spawnedObject = Instantiate(arObj, hitPose.position, Quaternion.identity);
-                    MicrophoneManager();
+                    AwakeObjArrayRock(arObjTags[0]);
+                    AwakeObjArrayWood(arObjTags[1]);
+                    AwakeObjArrayParrot(arObjTags[2]);
+
                     //birdSound.Play();
                     //windSound.Play();
 
                     pianoBtn = true;
-
+                    microphoneSwt = true;
                 }
             }
         }
@@ -83,6 +86,11 @@ public class PlaceOnPlane : MonoBehaviour
         if (pianoBtn)
         {
             uiObj.SetActive(true);
+        }
+
+        if (microphoneSwt)
+        {
+            MicrophoneManager();
         }
 
 
@@ -94,7 +102,7 @@ public class PlaceOnPlane : MonoBehaviour
         float hertz = NoteNameDetector.AnalyzeSound(audio, 1024, 0.04f);
         float scale = NoteNameDetector.ConvertHertzToScale(hertz);
         string s = NoteNameDetector.ConvertScaleToString(scale);
-        //Debug.Log(hertz + "Hz, Scale:" + scale + ", " + s);
+        Debug.Log(hertz + "Hz, Scale:" + scale + ", " + s);
         //Debug.Log("A+");
 
         if (s.Contains("C") || s.Contains("D") || s.Contains("E"))
@@ -121,6 +129,51 @@ public class PlaceOnPlane : MonoBehaviour
             {
                 arObjChild_Parrot[rand].gameObject.SetActive(true);
             }
+        }
+    }
+
+    void AwakeObjArrayRock(string tag)
+    {
+        var natureTransform = GameObject.FindWithTag(tag).transform;
+
+
+        foreach (Transform child in natureTransform.transform)
+        {
+            //Debug.Log();
+            arObjChild_Rock.Add(child);
+            //Debug.Log(arChildObjects_Wood[i]);
+            child.gameObject.SetActive(false);
+
+        }
+    }
+
+    void AwakeObjArrayWood(string tag)
+    {
+        var natureTransform = GameObject.FindWithTag(tag).transform;
+        int i = 0;
+
+        foreach (Transform child in natureTransform.transform)
+        {
+            //Debug.Log();
+            arObjChild_Wood.Add(child);
+            //Debug.Log(arChildObjects_Wood[i]);
+            child.gameObject.SetActive(false);
+            i++;
+        }
+    }
+
+    void AwakeObjArrayParrot(string tag)
+    {
+        var natureTransform = GameObject.FindWithTag(tag).transform;
+
+
+        foreach (Transform child in natureTransform.transform)
+        {
+            //Debug.Log();
+            arObjChild_Parrot.Add(child);
+            //Debug.Log(arChildObjects_Wood[i]);
+            //child.gameObject.SetActive(false);
+
         }
     }
 }
